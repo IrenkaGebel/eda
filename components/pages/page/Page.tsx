@@ -14,7 +14,7 @@ export function Page({ data }: PageProps) {
     <div>
       <div className="mb-14">
         {/* Header */}
-        <Header title={title} description={overview} />
+        <Header title={title}  />
 
         {/* Body */}
         {body && (
