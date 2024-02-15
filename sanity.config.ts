@@ -11,17 +11,20 @@ import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { apiVersion, dataset, projectId, studioUrl } from '@/sanity/lib/api'
 import { locate } from '@/sanity/plugins/locate'
 import { pageStructure, singletonPlugin } from '@/sanity/plugins/settings'
-import page from '@/sanity/schemas/documents/page'
-import project from '@/sanity/schemas/documents/project'
+import projects from '@/sanity/schemas/documents/projects'
 import duration from '@/sanity/schemas/objects/duration'
 import milestone from '@/sanity/schemas/objects/milestone'
 import timeline from '@/sanity/schemas/objects/timeline'
 import home from '@/sanity/schemas/singletons/home'
 import settings from '@/sanity/schemas/singletons/settings'
 
-const title =
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
-  'Next.js Personal Website with Sanity.io'
+import about from './sanity/schemas/documents/about'
+import colophon from './sanity/schemas/documents/colophon'
+import forCollaborators from './sanity/schemas/documents/forCollaborators'
+import iszsziStudio from './sanity/schemas/documents/iszsziStudio'
+import sketches from './sanity/schemas/documents/sketches'
+
+const title = process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Home of Eda'
 
 export default defineConfig({
   basePath: studioUrl,
@@ -36,8 +39,12 @@ export default defineConfig({
       settings,
       // Documents
       duration,
-      page,
-      project,
+      projects,
+      iszsziStudio,
+      sketches,
+      about,
+      forCollaborators,
+      colophon,
       // Objects
       milestone,
       timeline,

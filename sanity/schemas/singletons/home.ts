@@ -59,6 +59,68 @@ export default defineType({
       validation: (rule) => rule.max(155).required(),
     }),
     defineField({
+      name: 'showcaseAbout',
+      title: 'Showcase about',
+      description: 'This is how you access the about page from home page',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{ type: 'about' }],
+        }),
+      ],
+    }),
+    defineField({
+      name: 'showcaseForCollaborators',
+      title: 'Showcase for collaborators',
+      description:
+        'This is how you access the for collaborators page from home page',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{ type: 'forCollaborators' }],
+        }),
+      ],
+    }),
+    defineField({
+      name: 'showcaseColophon',
+      title: 'Showcase colophon',
+      description: 'This is how you access the colophon from home page',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{ type: 'forCollaborators' }],
+        }),
+      ],
+    }),
+    defineField({
+      name: 'showcaseiszsziStudio',
+      title: 'Showcase isz szi studio',
+      description:
+        'This is how you access isz szi studio projects from home page',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{ type: 'iszsziStudio' }],
+        }),
+      ],
+    }),
+    defineField({
+      name: 'showcaseSketches',
+      title: 'Showcase sketches',
+      description: 'This is how you access sketchesfrom home page',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{ type: 'Sketches' }],
+        }),
+      ],
+    }),
+    defineField({
       name: 'showcaseProjects',
       title: 'Showcase projects',
       description:
@@ -67,7 +129,7 @@ export default defineType({
       of: [
         defineArrayMember({
           type: 'reference',
-          to: [{ type: 'project' }],
+          to: [{ type: 'projects' }],
         }),
       ],
     }),

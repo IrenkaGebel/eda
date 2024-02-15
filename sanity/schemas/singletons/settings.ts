@@ -23,10 +23,7 @@ export default defineType({
               type: 'home',
             },
             {
-              type: 'page',
-            },
-            {
-              type: 'project',
+              type: 'projects',
             },
           ],
         },

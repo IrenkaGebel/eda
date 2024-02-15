@@ -1,4 +1,5 @@
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
+import about from '@/sanity/schemas/documents/about'
 
 interface HeaderProps {
 
@@ -10,7 +11,7 @@ export function Header(props: HeaderProps) {
     <div className="text-sm">
       {/* Title */}
       {title && (
-        <div className="left-0 tracking-tight md:text-5xl">
+        <div className="left-0 ">
           {title}
         </div>
       )}
