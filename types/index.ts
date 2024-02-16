@@ -7,17 +7,6 @@ export interface MenuItem {
   title?: string
 }
 
-export interface MilestoneItem {
-  description?: string
-  duration?: {
-    start?: string
-    end?: string
-  }
-  image?: Image
-  tags?: string[]
-  title?: string
-}
-
 export interface ShowcaseProject {
   _type: string
   coverImage?: Image
@@ -37,6 +26,14 @@ export interface HomePagePayload {
 }
 
 export interface PagePayload {
+  body?: PortableTextBlock[]
+  name?: string
+  overview?: PortableTextBlock[]
+  title?: string
+  slug?: string
+}
+
+export interface AboutPayload {
   body?: PortableTextBlock[]
   name?: string
   overview?: PortableTextBlock[]

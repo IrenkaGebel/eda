@@ -12,15 +12,9 @@ import { apiVersion, dataset, projectId, studioUrl } from '@/sanity/lib/api'
 import { locate } from '@/sanity/plugins/locate'
 import { pageStructure, singletonPlugin } from '@/sanity/plugins/settings'
 import projects from '@/sanity/schemas/documents/projects'
-import duration from '@/sanity/schemas/objects/duration'
-import milestone from '@/sanity/schemas/objects/milestone'
-import timeline from '@/sanity/schemas/objects/timeline'
 import home from '@/sanity/schemas/singletons/home'
 import settings from '@/sanity/schemas/singletons/settings'
 
-import about from './sanity/schemas/documents/about'
-import colophon from './sanity/schemas/documents/colophon'
-import forCollaborators from './sanity/schemas/documents/forCollaborators'
 import iszsziStudio from './sanity/schemas/documents/iszsziStudio'
 import sketches from './sanity/schemas/documents/sketches'
 
@@ -38,16 +32,9 @@ export default defineConfig({
       home,
       settings,
       // Documents
-      duration,
       projects,
       iszsziStudio,
       sketches,
-      about,
-      forCollaborators,
-      colophon,
-      // Objects
-      milestone,
-      timeline,
     ],
   },
   plugins: [

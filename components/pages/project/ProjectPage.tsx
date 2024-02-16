@@ -2,7 +2,6 @@ import type { EncodeDataAttributeCallback } from '@sanity/react-loader'
 import Link from 'next/link'
 
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
-import { Header } from '@/components/shared/Header'
 import ImageBox from '@/components/shared/ImageBox'
 import type { ProjectPayload } from '@/types'
 
@@ -13,27 +12,13 @@ export interface ProjectPageProps {
 
 export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
   // Default to an empty object to allow previews on non-existent documents
-  const {
-    client,
-    coverImage,
-    description,
-    duration,
-    overview,
-    site,
-    tags,
-    title,
-  } = data ?? {}
-
-  const startYear = new Date(duration?.start!).getFullYear()
-  const endYear = duration?.end ? new Date(duration?.end).getFullYear() : 'Now'
+  const { client, coverImage, description, overview, site, tags, title } =
+    data ?? {}
 
   return (
     <div>
       <div className="mb-20 space-y-6">
-        {/* Header */}
-        <Header title={title} description={overview} />
-
-        <div className="rounded-md border">
+        <div className="rounded-md ">
           {/* Image  */}
           <ImageBox
             data-sanity={encodeDataAttribute?.('coverImage')}
@@ -44,22 +29,6 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
           />
 
           <div className="divide-inherit grid grid-cols-1 divide-y lg:grid-cols-4 lg:divide-x lg:divide-y-0">
-            {/* Duration */}
-            {!!(startYear && endYear) && (
-              <div className="p-3 lg:p-4">
-                <div className="text-xs md:text-sm">Duration</div>
-                <div className="text-md md:text-lg">
-                  <span data-sanity={encodeDataAttribute?.('duration.start')}>
-                    {startYear}
-                  </span>
-                  {' - '}
-                  <span data-sanity={encodeDataAttribute?.('duration.end')}>
-                    {endYear}
-                  </span>
-                </div>
-              </div>
-            )}
-
             {/* Client */}
             {client && (
               <div className="p-3 lg:p-4">

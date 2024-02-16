@@ -6,10 +6,12 @@ import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
 import { Suspense } from 'react'
 
-import { Footer } from '@/components/global/Footer'
-import { Navbar } from '@/components/global/Navbar'
+import { Navbar } from '@/components/global/Navbar/Navbar'
 import { urlForOpenGraphImage } from '@/sanity/lib/utils'
 import { loadHomePage, loadSettings } from '@/sanity/loader/loadQuery'
+import { ColophonPage } from '@/components/pages/colophon/colophonPage'
+import { ForCollaboratorsPage } from '@/components/pages/forCollaborators/forCollaboratorsPage'
+import { AboutPage } from '@/components/pages/about/aboutPage'
 
 const LiveVisualEditing = dynamic(
   () => import('@/sanity/loader/LiveVisualEditing'),
@@ -49,16 +51,17 @@ export default async function IndexRoute({
 }) {
   return (
     <>
-      <div className="flex min-h-screen flex-col bg-white text-black">
-        <Suspense>
+      <div className="flex flex-row gap-x-4">
+        <span className="">
           <Navbar />
-        </Suspense>
-        <div className="mt-20 flex-grow px-4 md:px-16 lg:px-32">
+        </span>
+        <AboutPage />
+        <ForCollaboratorsPage />
+        <ColophonPage />
+
+        <div className="">
           <Suspense>{children}</Suspense>
         </div>
-        <Suspense>
-          <Footer />
-        </Suspense>
       </div>
       {draftMode().isEnabled && <LiveVisualEditing />}
     </>

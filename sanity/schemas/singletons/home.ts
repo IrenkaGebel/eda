@@ -14,7 +14,6 @@ export default defineType({
       description: 'This field is the title of your personal website.',
       title: 'Title',
       type: 'string',
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'overview',
@@ -54,44 +53,6 @@ export default defineType({
           },
           styles: [],
           type: 'block',
-        }),
-      ],
-      validation: (rule) => rule.max(155).required(),
-    }),
-    defineField({
-      name: 'showcaseAbout',
-      title: 'Showcase about',
-      description: 'This is how you access the about page from home page',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'reference',
-          to: [{ type: 'about' }],
-        }),
-      ],
-    }),
-    defineField({
-      name: 'showcaseForCollaborators',
-      title: 'Showcase for collaborators',
-      description:
-        'This is how you access the for collaborators page from home page',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'reference',
-          to: [{ type: 'forCollaborators' }],
-        }),
-      ],
-    }),
-    defineField({
-      name: 'showcaseColophon',
-      title: 'Showcase colophon',
-      description: 'This is how you access the colophon from home page',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'reference',
-          to: [{ type: 'forCollaborators' }],
         }),
       ],
     }),
