@@ -72,7 +72,7 @@ export default defineType({
     defineField({
       name: 'showcaseSketches',
       title: 'Showcase sketches',
-      description: 'This is how you access sketchesfrom home page',
+      description: 'This is how you access sketches from home page',
       type: 'array',
       of: [
         defineArrayMember({

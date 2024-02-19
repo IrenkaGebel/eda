@@ -1,4 +1,4 @@
-export async function ForCollaboratorsPage() {
+export async function ForCollaborators() {
   return (
     <>
       <div>

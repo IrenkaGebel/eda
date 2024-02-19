@@ -12,6 +12,22 @@ export const homePageQuery = groq`
       tags,
       title,
     },
+    showcaseSketches[]->{
+      _type,
+      coverImage,
+      overview,
+      "slug": slug.current,
+      tags,
+      title,
+    },
+    showcaseiszsziStudio[]->{
+      _type,
+      coverImage,
+      overview,
+      "slug": slug.current,
+      tags,
+      title,
+    },
     title,
   }
 `
@@ -32,7 +48,32 @@ export const projectBySlugQuery = groq`
     client,
     coverImage,
     description,
-    duration,
+    overview,
+    site,
+    "slug": slug.current,
+    tags,
+    title,
+  }
+`
+export const sketchBySlugQuery = groq`
+  *[_type == "sketch" && slug.current == $slug][0] {
+    _id,
+    client,
+    coverImage,
+    description,
+    overview,
+    site,
+    "slug": slug.current,
+    tags,
+    title,
+  }
+`
+export const iszsziStudioBySlugQuery = groq`
+  *[_type == "iszsziStudio" && slug.current == $slug][0] {
+    _id,
+    client,
+    coverImage,
+    description,
     overview,
     site,
     "slug": slug.current,

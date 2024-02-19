@@ -1,4 +1,4 @@
-export async function ColophonPage() {
+export async function Colophon() {
   return (
     <>
       <div>

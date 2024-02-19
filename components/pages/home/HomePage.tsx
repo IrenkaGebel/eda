@@ -12,13 +12,13 @@ export interface HomePageProps {
 
 export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
   // Default to an empty object to allow previews on non-existent documents
-  const { overview = [], showcaseProjects = [], title = '' } = data ?? {}
+  const { about = [], socials = [], showcaseProjects = [] } = data.home ?? {}
 
   return (
-    <div className="space-y-20">
+    <>
       {/* Showcase projects */}
       {showcaseProjects && showcaseProjects.length > 0 && (
-        <div className="mx-auto max-w-[100rem] rounded-md">
+        <div className="">
           {showcaseProjects.map((project, key) => {
             const href = resolveHref(project?._type, project?.slug)
             if (!href) {
@@ -40,7 +40,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
           })}
         </div>
       )}
-    </div>
+    </>
   )
 }
 

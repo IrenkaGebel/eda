@@ -1,13 +1,25 @@
-import dynamic from 'next/dynamic'
-import { draftMode } from 'next/headers'
+import Link from 'next/link'
 
-import { loadSettings } from '@/sanity/loader/loadQuery'
-
-export async function Navbar() {
+export default function Navbar() {
   return (
     <>
-      <div>
-        <header>home of eda</header>
+      <div className="flex flex-row justify-between bg-blue-200 ">
+        <div className="italic p-2">
+          <Link href="/">
+            <h1>home (of) eda</h1>
+          </Link>
+        </div>
+        <div className="flex gap-2 p-2 ">
+          <nav>
+            <Link href="#about">about</Link>
+          </nav>
+          <nav>
+            <Link href="#forCollaborators">for collaborators</Link>
+          </nav>
+          <nav>
+            <Link href="#colophon">colophon</Link>
+          </nav>
+        </div>
       </div>
     </>
   )
