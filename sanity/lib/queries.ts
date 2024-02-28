@@ -55,6 +55,17 @@ export const projectBySlugQuery = groq`
     title,
   }
 `
+
+export const ABOUT_QUERY = groq`*[_type == "aboutPage"][0]{
+  _id,
+  title,
+  slug,
+  summary,
+  content,
+  },
+  highlightedContent,
+}`
+
 export const sketchBySlugQuery = groq`
   *[_type == "sketch" && slug.current == $slug][0] {
     _id,

@@ -56,31 +56,7 @@ export default defineType({
         }),
       ],
     }),
-    defineField({
-      name: 'showcaseiszsziStudio',
-      title: 'Showcase isz szi studio',
-      description:
-        'This is how you access isz szi studio projects from home page',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'reference',
-          to: [{ type: 'iszsziStudio' }],
-        }),
-      ],
-    }),
-    defineField({
-      name: 'showcaseSketches',
-      title: 'Showcase sketches',
-      description: 'This is how you access sketches from home page',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'reference',
-          to: [{ type: 'Sketches' }],
-        }),
-      ],
-    }),
+
     defineField({
       name: 'showcaseProjects',
       title: 'Showcase projects',
@@ -90,7 +66,11 @@ export default defineType({
       of: [
         defineArrayMember({
           type: 'reference',
-          to: [{ type: 'projects' }],
+          to: [
+            { type: 'projects' },
+            { type: 'sketches' },
+            { type: 'iszsziStudio' },
+          ],
         }),
       ],
     }),

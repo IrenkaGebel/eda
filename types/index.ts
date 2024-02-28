@@ -16,12 +16,31 @@ export interface ShowcaseProject {
   title?: string
 }
 
+export interface ShowcaseSketches {
+  _type: string
+  coverImage?: Image
+  overview?: PortableTextBlock[]
+  slug?: string
+  tags?: string[]
+  title?: string
+}
+
+export interface ShowcaseiszsziStudio {
+  _type: string
+  coverImage?: Image
+  overview?: PortableTextBlock[]
+  slug?: string
+  tags?: string[]
+  title?: string
+}
 // Page payloads
 
 export interface HomePagePayload {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
   showcaseProjects?: ShowcaseProject[]
+  showcaseSketches?: ShowcaseSketches[]
+  showcaseiszsziStudio?: ShowcaseiszsziStudio[]
   title?: string
 }
 
@@ -31,6 +50,13 @@ export interface PagePayload {
   overview?: PortableTextBlock[]
   title?: string
   slug?: string
+}
+export interface AboutPagePayload {
+  _id: string
+  title: string
+  slug: string
+  content: PortableTextBlock[]
+  highlightedContent: string
 }
 
 export interface ProjectPayload {

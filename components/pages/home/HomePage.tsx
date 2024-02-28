@@ -12,34 +12,37 @@ export interface HomePageProps {
 
 export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
   // Default to an empty object to allow previews on non-existent documents
-  const { about = [], socials = [], showcaseProjects = [] } = data.home ?? {}
+
+  const { showcaseProjects = [] } = data ?? {}
 
   return (
     <>
-      {/* Showcase projects */}
-      {showcaseProjects && showcaseProjects.length > 0 && (
-        <div className="">
-          {showcaseProjects.map((project, key) => {
-            const href = resolveHref(project?._type, project?.slug)
-            if (!href) {
-              return null
-            }
-            return (
-              <Link
-                key={key}
-                href={href}
-                data-sanity={encodeDataAttribute?.([
-                  'showcaseProjects',
-                  key,
-                  'slug',
-                ])}
-              >
-                <ProjectListItem project={project} odd={key % 2} />
-              </Link>
-            )
-          })}
-        </div>
-      )}
+      <div className="space-y-20">
+        {/* Showcase projects */}{' '}
+        {showcaseProjects && showcaseProjects.length > 0 && (
+          <div className="mx-auto max-w-[100rem] rounded-md border">
+            {showcaseProjects.map((project, key) => {
+              const href = resolveHref(project?._type, project?.slug)
+              if (!href) {
+                return null
+              }
+              return (
+                <Link
+                  key={key}
+                  href={href}
+                  data-sanity={encodeDataAttribute?.([
+                    'showcaseProjects',
+                    key,
+                    'slug',
+                  ])}
+                >
+                  <ProjectListItem project={project} odd={key % 2} />
+                </Link>
+              )
+            })}
+          </div>
+        )}
+      </div>
     </>
   )
 }

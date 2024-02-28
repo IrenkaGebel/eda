@@ -1,3 +1,4 @@
+'use client'
 import type { PortableTextBlock } from '@portabletext/types'
 
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
