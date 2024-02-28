@@ -1,6 +1,17 @@
 import type { PortableTextBlock } from '@portabletext/types'
 import type { Image } from 'sanity'
 
+import about from '@/sanity/schemas/documents/about'
+
+export interface about {
+  _type: string
+  slug?: string
+  heading: string
+  bio: PortableTextBlock[]
+  contact: PortableTextBlock[]
+  work: PortableTextBlock[]
+}
+
 export interface MenuItem {
   _type: string
   slug?: string
@@ -50,13 +61,6 @@ export interface PagePayload {
   overview?: PortableTextBlock[]
   title?: string
   slug?: string
-}
-export interface AboutPagePayload {
-  _id: string
-  title: string
-  slug: string
-  content: PortableTextBlock[]
-  highlightedContent: string
 }
 
 export interface ProjectPayload {

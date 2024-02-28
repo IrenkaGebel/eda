@@ -20,7 +20,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
       <div className="space-y-20">
         {/* Showcase projects */}{' '}
         {showcaseProjects && showcaseProjects.length > 0 && (
-          <div className="mx-auto max-w-[100rem] rounded-md border">
+          <div className="mx-auto max-w-[100rem] rounded-md">
             {showcaseProjects.map((project, key) => {
               const href = resolveHref(project?._type, project?.slug)
               if (!href) {

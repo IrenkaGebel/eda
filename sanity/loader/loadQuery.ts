@@ -88,6 +88,14 @@ export function loadProject(slug: string) {
   )
 }
 
+export function loadAbout(slug: string) {
+  return loadQuery<AboutPayload | null>(
+    pagesBySlugQuery,
+    { slug },
+    { next: { tags: [`about:${slug}`] } },
+  )
+}
+
 export function loadPage(slug: string) {
   return loadQuery<PagePayload | null>(
     pagesBySlugQuery,

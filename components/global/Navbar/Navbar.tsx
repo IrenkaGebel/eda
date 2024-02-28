@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 
 export default function Navbar() {
@@ -11,13 +12,13 @@ export default function Navbar() {
         </div>
         <div className="flex gap-2 p-2 ">
           <nav>
-            <Link href="#about">about</Link>
+            <Link href="/about/page">about</Link>
           </nav>
           <nav>
-            <Link href="#forCollaborators">for collaborators</Link>
+            <Link href="/for-Collaborators/page">for collaborators</Link>
           </nav>
           <nav>
-            <Link href="#colophon">colophon</Link>
+            <Link href="/colophon/page">colophon</Link>
           </nav>
         </div>
       </div>

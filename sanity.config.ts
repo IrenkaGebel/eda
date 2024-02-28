@@ -15,6 +15,7 @@ import projects from '@/sanity/schemas/documents/projects'
 import home from '@/sanity/schemas/singletons/home'
 import settings from '@/sanity/schemas/singletons/settings'
 
+import about from './sanity/schemas/documents/about'
 import iszsziStudio from './sanity/schemas/documents/iszsziStudio'
 import sketches from './sanity/schemas/documents/sketches'
 
@@ -32,6 +33,7 @@ export default defineConfig({
       home,
       settings,
       // Documents
+      about,
       projects,
       iszsziStudio,
       sketches,

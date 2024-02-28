@@ -1,11 +1,11 @@
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import type { PagePayload } from '@/types'
 
-export interface PageProps {
+export interface AboutPageProps {
   data: PagePayload | null
 }
 
-export function Page({ data }: PageProps) {
+export function About({ data }: AboutPageProps) {
   // Default to an empty object to allow previews on non-existent documents
   const { body, overview, title } = data ?? {}
 
@@ -25,4 +25,4 @@ export function Page({ data }: PageProps) {
   )
 }
 
-export default Page
+export default About

@@ -1,23 +1,45 @@
 import 'tailwindcss/tailwind.css'
 
-import { IBM_Plex_Mono, Inter, PT_Serif } from 'next/font/google'
+import localFont from 'next/font/local'
 
-const serif = PT_Serif({
-  variable: '--font-serif',
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  weight: ['400', '700'],
+const regular = localFont({
+  src: [
+    {
+      path: './lunchtype22-light.woff2',
+      weight: '300',
+      style: 'light',
+    },
+    {
+      path: './lunchtype22-medium.woff2',
+      weight: '400',
+      style: 'medium',
+    },
+    {
+      path: './lunchtype22-regular.woff2',
+      weight: '500',
+      style: 'regular',
+    },
+  ],
 })
-const sans = Inter({
-  variable: '--font-sans',
-  subsets: ['latin'],
-  // @todo: understand why extrabold (800) isn't being respected when explicitly specified in this weight array
-  // weight: ['500', '700', '800'],
-})
-const mono = IBM_Plex_Mono({
-  variable: '--font-mono',
-  subsets: ['latin'],
-  weight: ['500', '700'],
+
+const italic = localFont({
+  src: [
+    {
+      path: './lunchtype23-light-italic.woff2',
+      weight: '300',
+      style: 'light',
+    },
+    {
+      path: './lunchtype23-medium-italic.woff2',
+      weight: '400',
+      style: 'medium',
+    },
+    {
+      path: './lunchtype23-regular-italic.woff2',
+      weight: '500',
+      style: 'regular',
+    },
+  ],
 })
 
 export default async function RootLayout({
@@ -26,10 +48,7 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      className={`${mono.variable} ${sans.variable} ${serif.variable}`}
-    >
+    <html lang="en" className={`${italic.className} ${regular.className}`}>
       <body>{children}</body>
     </html>
   )
