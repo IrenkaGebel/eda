@@ -6,6 +6,11 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'title',
+      title: 'Page title',
+      type: 'string',
+    }),
+    defineField({
       name: 'heading',
       description: 'this is where you define the subject of your about text',
       title: 'Heading',

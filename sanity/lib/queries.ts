@@ -60,6 +60,7 @@ export const ABOUT_QUERY = groq`*[_type == "about"][0]{
   _id,
   title,
   slug,
+
 }`
 
 export const sketchBySlugQuery = groq`

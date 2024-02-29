@@ -1,28 +1,20 @@
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
-import type { PagePayload } from '@/types'
+import type { AboutPayload, PagePayload } from '@/types'
 
 export interface AboutPageProps {
-  data: PagePayload | null
+  data: AboutPayload | null
 }
 
 export function About({ data }: AboutPageProps) {
-  // Default to an empty object to allow previews on non-existent documents
-  const { body, overview, title } = data ?? {}
+  const { title } = data ?? {}
 
-  return (
-    <div>
-      <div className="mb-14">
-        {/* Body */}
-        {body && (
-          <CustomPortableText
-            paragraphClasses="font-serif max-w-3xl text-gray-600 text-xl"
-            value={body}
-          />
-        )}
-      </div>
-      <div className="absolute left-0 w-screen" />
-    </div>
-  )
+  console.log(data)
+
+  return <div className="pt-16 ">{title}</div>
+  //   {edaGroup && (
+  //     <h1>{edaGroup.title}</h1>
+  //     <p>{edaGroup.bio}</p>
+  //   )}
 }
 
 export default About

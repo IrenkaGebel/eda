@@ -3,13 +3,17 @@ import type { Image } from 'sanity'
 
 import about from '@/sanity/schemas/documents/about'
 
-export interface about {
-  _type: string
-  slug?: string
-  heading: string
+export interface EdaGroup {
   bio: PortableTextBlock[]
   contact: PortableTextBlock[]
-  work: PortableTextBlock[]
+}
+
+export interface AboutPayload {
+  _type: string
+  slug: string
+  _id: string
+  title: string
+  edaGroup: EdaGroup
 }
 
 export interface MenuItem {
