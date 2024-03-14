@@ -6,112 +6,288 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'title',
-      title: 'Page title',
+      title: 'page title',
+      name: 'pageTitle',
       type: 'string',
     }),
     defineField({
-      name: 'heading',
-      description: 'this is where you define the subject of your about text',
-      title: 'Heading',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
-
-    defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'heading',
-        maxLength: 96,
-        isUnique: (value, context) => context.defaultIsUnique(value, context),
-      },
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'bio',
-      description: 'this is where you write a biography text.',
-      title: 'Bio',
-      type: 'array',
-      of: [
-        // Paragraphs
-        defineArrayMember({
-          lists: [],
-          marks: {
-            annotations: [],
-            decorators: [
-              {
-                title: 'Italic',
-                value: 'em',
+      name: 'edaGroup',
+      title: 'eda Group',
+      type: 'object',
+      fields: [
+        { title: 'heading Eda', name: 'headingEda', type: 'string' },
+        {
+          name: 'bioEda',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              marks: {
+                annotations: [
+                  {
+                    name: 'link',
+                    type: 'object',
+                    title: 'Link',
+                    fields: [
+                      {
+                        name: 'href',
+                        type: 'url',
+                        title: 'Url',
+                      },
+                    ],
+                  },
+                ],
+                decorators: [
+                  {
+                    title: 'Italic',
+                    value: 'em',
+                  },
+                  {
+                    title: 'Strong',
+                    value: 'strong',
+                  },
+                  {
+                    title: 'Underline',
+                    value: 'underline',
+                  },
+                ],
               },
-              {
-                title: 'Strong',
-                value: 'strong',
+              styles: [],
+              type: 'block',
+            }),
+          ],
+          title: 'bio Eda',
+        },
+        { title: 'heading Contact', name: 'headingContact', type: 'string' },
+        {
+          name: 'contactEda',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              lists: [],
+              marks: {
+                annotations: [
+                  {
+                    name: 'link',
+                    type: 'object',
+                    title: 'Link',
+                    fields: [
+                      {
+                        name: 'href',
+                        type: 'url',
+                        title: 'Url',
+                      },
+                    ],
+                  },
+                ],
+                decorators: [
+                  {
+                    title: 'Italic',
+                    value: 'em',
+                  },
+                  {
+                    title: 'Strong',
+                    value: 'strong',
+                  },
+                  {
+                    title: 'Underline',
+                    value: 'underline',
+                  },
+                ],
               },
-            ],
-          },
-          styles: [],
-          type: 'block',
-        }),
+              styles: [],
+              type: 'block',
+            }),
+          ],
+          title: 'contact Eda',
+        },
+        { title: 'heading Work', name: 'headingWork', type: 'string' },
+        {
+          name: 'workEda',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              lists: [],
+              marks: {
+                annotations: [
+                  {
+                    name: 'link',
+                    type: 'object',
+                    title: 'Link',
+                    fields: [
+                      {
+                        name: 'href',
+                        type: 'url',
+                        title: 'Url',
+                      },
+                    ],
+                  },
+                ],
+                decorators: [
+                  {
+                    title: 'Italic',
+                    value: 'em',
+                  },
+                  {
+                    title: 'Strong',
+                    value: 'strong',
+                  },
+                  {
+                    title: 'Underline',
+                    value: 'underline',
+                  },
+                ],
+              },
+              styles: [],
+              type: 'block',
+            }),
+          ],
+          title: 'work Eda',
+        },
       ],
-      validation: (rule) => rule.max(155).required(),
     }),
     defineField({
-      name: 'contact',
-      description: 'this is where you write you provide contact information.',
-      title: 'Contact',
-      type: 'array',
-      of: [
-        // Paragraphs
-        defineArrayMember({
-          lists: [],
-          marks: {
-            annotations: [],
-            decorators: [
-              {
-                title: 'Italic',
-                value: 'em',
+      name: 'iszsziGroup',
+      title: 'iszsziGroup',
+      type: 'object',
+      fields: [
+        { name: 'headingIszszi', type: 'string', title: 'heading isz szi' },
+        {
+          name: 'bioIszszi',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              lists: [],
+              marks: {
+                annotations: [
+                  {
+                    name: 'link',
+                    type: 'object',
+                    title: 'Link',
+                    fields: [
+                      {
+                        name: 'href',
+                        type: 'url',
+                        title: 'Url',
+                      },
+                    ],
+                  },
+                ],
+                decorators: [
+                  {
+                    title: 'Italic',
+                    value: 'em',
+                  },
+                  {
+                    title: 'Strong',
+                    value: 'strong',
+                  },
+                  {
+                    title: 'Underline',
+                    value: 'underline',
+                  },
+                ],
               },
-              {
-                title: 'Strong',
-                value: 'strong',
+              styles: [],
+              type: 'block',
+            }),
+          ],
+          title: 'bio isz szi',
+        },
+        {
+          name: 'headingContactIszszi',
+          type: 'string',
+          title: 'heading contact isz szi',
+        },
+        {
+          name: 'contactIszszi',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              lists: [],
+              marks: {
+                annotations: [
+                  {
+                    name: 'link',
+                    type: 'object',
+                    title: 'Link',
+                    fields: [
+                      {
+                        name: 'href',
+                        type: 'url',
+                        title: 'Url',
+                      },
+                    ],
+                  },
+                ],
+                decorators: [
+                  {
+                    title: 'Italic',
+                    value: 'em',
+                  },
+                  {
+                    title: 'Strong',
+                    value: 'strong',
+                  },
+                  {
+                    title: 'Underline',
+                    value: 'underline',
+                  },
+                ],
               },
-            ],
-          },
-          styles: [],
-          type: 'block',
-        }),
+              styles: [],
+              type: 'block',
+            }),
+          ],
+          title: 'contact isz szi',
+        },
+        {
+          name: 'headingWorkIszszi',
+          type: 'string',
+          title: 'heading work isz szi',
+        },
+        {
+          name: 'workIszszi',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              lists: [],
+              marks: {
+                annotations: [
+                  {
+                    name: 'link',
+                    type: 'object',
+                    title: 'Link',
+                    fields: [
+                      {
+                        name: 'href',
+                        type: 'url',
+                        title: 'Url',
+                      },
+                    ],
+                  },
+                ],
+                decorators: [
+                  {
+                    title: 'Italic',
+                    value: 'em',
+                  },
+                  {
+                    title: 'Strong',
+                    value: 'strong',
+                  },
+                  {
+                    title: 'Underline',
+                    value: 'underline',
+                  },
+                ],
+              },
+              styles: [],
+              type: 'block',
+            }),
+          ],
+          title: 'work isz szi',
+        },
       ],
-      validation: (rule) => rule.max(155).required(),
-    }),
-    defineField({
-      name: 'work',
-      description: 'this is where you write you provide work experience.',
-      title: 'Work',
-      type: 'array',
-      of: [
-        // Paragraphs
-        defineArrayMember({
-          lists: [],
-          marks: {
-            annotations: [],
-            decorators: [
-              {
-                title: 'Italic',
-                value: 'em',
-              },
-              {
-                title: 'Strong',
-                value: 'strong',
-              },
-            ],
-          },
-          styles: [],
-          type: 'block',
-        }),
-      ],
-      validation: (rule) => rule.max(155).required(),
     }),
   ],
 })

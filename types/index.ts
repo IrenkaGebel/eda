@@ -1,19 +1,57 @@
 import type { PortableTextBlock } from '@portabletext/types'
 import type { Image } from 'sanity'
 
-import about from '@/sanity/schemas/documents/about'
-
-export interface EdaGroup {
-  bio: PortableTextBlock[]
-  contact: PortableTextBlock[]
-}
-
 export interface AboutPayload {
   _type: string
   slug: string
   _id: string
   title: string
-  edaGroup: EdaGroup
+  edaGroup: edaGroup
+  iszsziGroup: iszsziGroup
+}
+export interface edaGroup {
+  _type: string
+  headingEda: string
+  bioEda: PortableTextBlock[]
+  headingContact: string
+  contactEda: PortableTextBlock[]
+  headingWork: string
+  workEda: PortableTextBlock[]
+}
+
+export interface iszsziGroup {
+  _type: string
+  headingIszszi: string
+  bioIszszi: PortableTextBlock[]
+  headingContactIszszi: string
+  contactIszszi: PortableTextBlock[]
+  headingWorkIszszi: string
+  workIszszi: PortableTextBlock[]
+}
+
+export interface ColophonPayload {
+  _type: string
+  slug: string
+  _id: string
+  title: string
+  info: PortableTextBlock[]
+  revision: string
+  typeUsed: string
+}
+
+export interface parts {
+  _type: string
+  headingOne: string
+  contentOne: PortableTextBlock
+}
+
+export interface forCollaboratorsPayload {
+  _type: string
+  slug: string
+  _id: string
+  title: string
+  introduction: PortableTextBlock
+  parts: parts
 }
 
 export interface MenuItem {

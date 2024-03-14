@@ -11,13 +11,15 @@ import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { apiVersion, dataset, projectId, studioUrl } from '@/sanity/lib/api'
 import { locate } from '@/sanity/plugins/locate'
 import { pageStructure, singletonPlugin } from '@/sanity/plugins/settings'
-import projects from '@/sanity/schemas/documents/projects'
 import home from '@/sanity/schemas/singletons/home'
 import settings from '@/sanity/schemas/singletons/settings'
 
 import about from './sanity/schemas/documents/about'
 import iszsziStudio from './sanity/schemas/documents/iszsziStudio'
 import sketches from './sanity/schemas/documents/sketches'
+import colophon from './sanity/schemas/documents/colophon'
+import forCollaborators from './sanity/schemas/documents/forCollaborators'
+import project from './sanity/schemas/documents/project'
 
 const title = process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Home of Eda'
 
@@ -33,10 +35,12 @@ export default defineConfig({
       home,
       settings,
       // Documents
-      about,
-      projects,
+      project,
       iszsziStudio,
       sketches,
+      forCollaborators,
+      about,
+      colophon,
     ],
   },
   plugins: [

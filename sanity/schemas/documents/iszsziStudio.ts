@@ -5,7 +5,7 @@ export default defineType({
   name: 'iszsziStudio',
   title: 'isz szi studio',
   type: 'document',
-  icon: DocumentIcon,
+
   // Uncomment below to have edits publish automatically as you type
   // liveEdit: true,
   fields: [

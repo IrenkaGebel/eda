@@ -4,30 +4,31 @@ export const homePageQuery = groq`
   *[_type == "home"][0]{
     _id,
     overview,
-    showcaseProjects[]->{
-      _type,
-      coverImage,
-      overview,
-      "slug": slug.current,
-      tags,
-      title,
-    },
-    showcaseSketches[]->{
-      _type,
-      coverImage,
-      overview,
-      "slug": slug.current,
-      tags,
-      title,
-    },
-    showcaseiszsziStudio[]->{
-      _type,
-      coverImage,
-      overview,
-      "slug": slug.current,
-      tags,
-      title,
-    },
+    showcaseProjects,
+    // showcaseProjects[]->{
+    //   _type,
+    //   coverImage,
+    //   overview,
+    //   "slug": slug.current,
+    //   tags,
+    //   title,
+    // },
+    // showcaseSketches[]->{
+    //   _type,
+    //   coverImage,
+    //   overview,
+    //   "slug": slug.current,
+    //   tags,
+    //   title,
+    // },
+    // showcaseiszsziStudio[]->{
+    //   _type,
+    //   coverImage,
+    //   overview,
+    //   "slug": slug.current,
+    //   tags,
+    //   title,
+    // },
     title,
   }
 `
@@ -60,7 +61,23 @@ export const ABOUT_QUERY = groq`*[_type == "about"][0]{
   _id,
   title,
   slug,
+  edaGroup,
+  iszsziGroup,
+}`
 
+export const COLOPHON_QUERY = groq`*[_type == "colophon"][0]{
+  _id,
+  title,
+  info,
+  typeUsed,
+  revision,
+}`
+
+export const forCollaborators_QUERY = groq`*[_type == "colophon"][0]{
+  _id,
+  title,
+  slug,
+  document,
 }`
 
 export const sketchBySlugQuery = groq`

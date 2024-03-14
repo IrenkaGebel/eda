@@ -6,6 +6,8 @@ import { draftMode } from 'next/headers'
 import { client } from '@/sanity/lib/client'
 import {
   ABOUT_QUERY,
+  COLOPHON_QUERY,
+  forCollaborators_QUERY,
   homePageQuery,
   pagesBySlugQuery,
   projectBySlugQuery,
@@ -14,10 +16,12 @@ import {
 import { token } from '@/sanity/lib/token'
 import {
   AboutPayload,
+  ColophonPayload,
   HomePagePayload,
   PagePayload,
   ProjectPayload,
   SettingsPayload,
+  forCollaboratorsPayload,
 } from '@/types'
 
 const serverClient = client.withConfig({
@@ -95,6 +99,22 @@ export function loadAbout() {
     ABOUT_QUERY,
     {},
     { next: { tags: [`about`] } },
+  )
+}
+
+export function loadColophon() {
+  return loadQuery<ColophonPayload | null>(
+    COLOPHON_QUERY,
+    {},
+    { next: { tags: [`colophon`] } },
+  )
+}
+
+export function loadForCollaborators() {
+  return loadQuery<forCollaboratorsPayload | null>(
+    forCollaborators_QUERY,
+    {},
+    { next: { tags: [`forCollaborators`] } },
   )
 }
 
