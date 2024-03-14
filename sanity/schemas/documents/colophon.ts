@@ -53,7 +53,7 @@ export default defineType({
       ],
     }),
     defineField({
-      title: 'typeUsed',
+      title: 'type Used',
       name: 'typeUsed',
       type: 'string',
     }),
