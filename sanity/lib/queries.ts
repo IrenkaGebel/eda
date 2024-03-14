@@ -73,11 +73,11 @@ export const COLOPHON_QUERY = groq`*[_type == "colophon"][0]{
   revision,
 }`
 
-export const forCollaborators_QUERY = groq`*[_type == "colophon"][0]{
+export const Collaborators_QUERY = groq`*[_type == "Collaborators"][0]{
   _id,
   title,
-  slug,
-  document,
+  intro,
+  parts,
 }`
 
 export const sketchBySlugQuery = groq`

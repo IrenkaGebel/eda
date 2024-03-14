@@ -39,19 +39,24 @@ export interface ColophonPayload {
   typeUsed: string
 }
 
-export interface parts {
-  _type: string
-  headingOne: string
-  contentOne: PortableTextBlock
-}
-
-export interface forCollaboratorsPayload {
+export interface CollaboratorsPayload {
   _type: string
   slug: string
   _id: string
   title: string
-  introduction: PortableTextBlock
+  intro: PortableTextBlock[]
   parts: parts
+}
+export interface parts {
+  _type: string
+  headingOne: string
+  contentOne: PortableTextBlock[]
+  headingTwo: string
+  contentTwo: PortableTextBlock[]
+  headingThree: string
+  contentThree: PortableTextBlock[]
+  headingFour: string
+  contentFour: PortableTextBlock[]
 }
 
 export interface MenuItem {

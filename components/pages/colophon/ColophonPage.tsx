@@ -9,17 +9,14 @@ export interface ColophonPageProps {
 }
 
 export function Colophon({ data }: ColophonPageProps) {
-  const { title, info, revision, typeUsed } = data ?? {}
+  const { info, revision, typeUsed } = data ?? {}
 
   return (
-    console.log(data),
-    (
-      <>
-        <CustomPortableText value={info as PortableTextBlock[]} />
-        {revision}
-        {typeUsed}
-      </>
-    )
+    <>
+      <CustomPortableText value={info as PortableTextBlock[]} />
+      <p>{revision}</p>
+      <p>{typeUsed}</p>
+    </>
   )
 }
 export default Colophon
