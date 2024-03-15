@@ -50,12 +50,16 @@ export interface CollaboratorsPayload {
 export interface parts {
   _type: string
   headingOne: string
+  wordCountOne: string
   contentOne: PortableTextBlock[]
   headingTwo: string
+  wordCountTwo: string
   contentTwo: PortableTextBlock[]
   headingThree: string
+  wordCountThree: string
   contentThree: PortableTextBlock[]
   headingFour: string
+  wordCountFour: string
   contentFour: PortableTextBlock[]
 }
 
@@ -65,7 +69,7 @@ export interface MenuItem {
   title?: string
 }
 
-export interface ShowcaseProject {
+export interface showcaseProjects {
   _type: string
   coverImage?: Image
   overview?: PortableTextBlock[]
@@ -74,31 +78,28 @@ export interface ShowcaseProject {
   title?: string
 }
 
-export interface ShowcaseSketches {
-  _type: string
-  coverImage?: Image
-  overview?: PortableTextBlock[]
-  slug?: string
-  tags?: string[]
-  title?: string
-}
+// export interface ShowcaseSketches {
+//   _type: string
+//   coverImage?: Image
+//   overview?: PortableTextBlock[]
+//   slug?: string
+//   tags?: string[]
+//   title?: string
+// }
 
-export interface ShowcaseiszsziStudio {
-  _type: string
-  coverImage?: Image
-  overview?: PortableTextBlock[]
-  slug?: string
-  tags?: string[]
-  title?: string
-}
-// Page payloads
+// export interface ShowcaseiszsziStudio {
+//   _type: string
+//   coverImage?: Image
+//   overview?: PortableTextBlock[]
+//   slug?: string
+//   tags?: string[]
+//   title?: string
+// }
 
 export interface HomePagePayload {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
-  showcaseProjects?: ShowcaseProject[]
-  showcaseSketches?: ShowcaseSketches[]
-  showcaseiszsziStudio?: ShowcaseiszsziStudio[]
+  showcaseProjects?: showcaseProjects[]
   title?: string
 }
 
@@ -114,10 +115,6 @@ export interface ProjectPayload {
   client?: string
   coverImage?: Image
   description?: PortableTextBlock[]
-  duration?: {
-    start?: string
-    end?: string
-  }
   overview?: PortableTextBlock[]
   site?: string
   slug: string

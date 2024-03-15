@@ -6,12 +6,9 @@ export default defineType({
   title: 'Projects',
   type: 'document',
 
-  // Uncomment below to have edits publish automatically as you type
-  // liveEdit: true,
   fields: [
     defineField({
       name: 'title',
-      description: 'This field is the title of your project.',
       title: 'Title',
       type: 'string',
       validation: (rule) => rule.required(),

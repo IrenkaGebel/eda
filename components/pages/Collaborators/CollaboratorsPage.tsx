@@ -21,6 +21,7 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
         {parts && (
           <>
             <h1>{parts.headingOne}</h1>
+            <h2>{parts.wordCountOne}</h2>
             <section>
               <CustomPortableText
                 value={parts.contentOne as PortableTextBlock[]}
@@ -28,6 +29,7 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
             </section>
 
             <h1>{parts.headingTwo}</h1>
+            <h2>{parts.wordCountTwo}</h2>
             <section>
               <CustomPortableText
                 value={parts.contentTwo as PortableTextBlock[]}
@@ -35,6 +37,7 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
             </section>
 
             <h1>{parts.headingThree}</h1>
+            <h2>{parts.wordCountThree}</h2>
             <section>
               {' '}
               <CustomPortableText
@@ -43,6 +46,7 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
             </section>
 
             <h1>{parts.headingFour}</h1>
+            <h2>{parts.wordCountFour}</h2>
             <section>
               <CustomPortableText
                 value={parts.contentFour as PortableTextBlock[]}

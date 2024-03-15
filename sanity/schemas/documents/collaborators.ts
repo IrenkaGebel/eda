@@ -59,6 +59,7 @@ export default defineType({
       type: 'object',
       fields: [
         { title: 'heading One', name: 'headingOne', type: 'string' },
+        { title: 'word count One', name: 'wordCountOne', type: 'string' },
         {
           name: 'contentOne',
           type: 'array',
@@ -100,6 +101,7 @@ export default defineType({
           ],
         },
         { title: 'heading Two', name: 'headingTwo', type: 'string' },
+        { title: 'word count Two', name: 'wordCountTwo', type: 'string' },
         {
           name: 'contentTwo',
           type: 'array',
@@ -141,6 +143,7 @@ export default defineType({
           ],
         },
         { title: 'heading Three', name: 'headingThree', type: 'string' },
+        { title: 'word count Three', name: 'wordCountThree', type: 'string' },
         {
           name: 'contentThree',
           type: 'array',
@@ -182,6 +185,7 @@ export default defineType({
           ],
         },
         { title: 'heading Four', name: 'headingFour', type: 'string' },
+        { title: 'word count Four', name: 'wordCountFour', type: 'string' },
         {
           name: 'contentFour',
           type: 'array',

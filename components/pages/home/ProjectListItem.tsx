@@ -14,22 +14,25 @@ export function ProjectListItem(props: ProjectProps) {
   const { project, odd } = props
 
   return (
-    <div
-      className={`flex flex-col gap-x-5 p-2 transition hover:bg-gray-50/50 xl:flex-row ${
-        odd && 'xl:flex-row-reverse'
-      }`}
-    >
-      <div className="w-full xl:w-9/12">
-        <ImageBox
-          image={project.coverImage}
-          alt={`Cover image from ${project.title}`}
-          classesWrapper="relative aspect-[16/9]"
-        />
+    console.log(props),
+    (
+      <div
+        className={`flex flex-col gap-x-5 p-2 transition hover:bg-gray-50/50 xl:flex-row ${
+          odd && 'xl:flex-row-reverse'
+        }`}
+      >
+        <div className="w-full xl:w-9/12">
+          <ImageBox
+            image={project.coverImage}
+            alt={`Cover image from ${project.title}`}
+            classesWrapper="relative aspect-[16/9]"
+          />
+        </div>
+        <div className="flex xl:w-1/4">
+          <TextBox project={project} />
+        </div>
       </div>
-      <div className="flex xl:w-1/4">
-        <TextBox project={project} />
-      </div>
-    </div>
+    )
   )
 }
 

@@ -10,7 +10,6 @@ export interface AboutPageProps {
 
 export function About({ data }: AboutPageProps) {
   const { edaGroup, iszsziGroup } = data ?? {}
-  console.log(data)
 
   return (
     <>

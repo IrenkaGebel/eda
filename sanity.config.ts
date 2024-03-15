@@ -17,9 +17,7 @@ import settings from '@/sanity/schemas/singletons/settings'
 import about from './sanity/schemas/documents/about'
 import Collaborators from './sanity/schemas/documents/collaborators'
 import colophon from './sanity/schemas/documents/colophon'
-import iszsziStudio from './sanity/schemas/documents/iszsziStudio'
 import project from './sanity/schemas/documents/project'
-import sketches from './sanity/schemas/documents/sketches'
 
 const title = process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Home of Eda'
 
@@ -36,8 +34,6 @@ export default defineConfig({
       settings,
       // Documents
       project,
-      iszsziStudio,
-      sketches,
       Collaborators,
       about,
       colophon,
