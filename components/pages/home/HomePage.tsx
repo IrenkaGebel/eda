@@ -17,10 +17,10 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
 
   return (
     <>
-      <div className="space-y-20">
+      <div className="">
         {/* Showcase projects */}{' '}
         {showcaseProjects && showcaseProjects.length > 0 && (
-          <div className="mx-auto max-w-[100rem] rounded-md">
+          <div className="">
             {showcaseProjects.map((project, key) => {
               const href = resolveHref(project?._type, project?.slug)
               if (!href) {

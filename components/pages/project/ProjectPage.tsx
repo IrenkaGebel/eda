@@ -25,28 +25,24 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
             image={coverImage}
             // @TODO add alt field in schema
             alt=""
-            classesWrapper="relative aspect-[16/9]"
+            classesWrapper=" "
           />
 
-          <div className="divide-inherit grid grid-cols-1 divide-y lg:grid-cols-4 lg:divide-x lg:divide-y-0">
+          <div className="">
             {/* Client */}
             {client && (
-              <div className="p-3 lg:p-4">
-                <div className="text-xs md:text-sm">Client</div>
-                <div className="text-md md:text-lg">{client}</div>
+              <div className="">
+                <div className="">Client</div>
+                <div className="">{client}</div>
               </div>
             )}
 
             {/* Site */}
             {site && (
-              <div className="p-3 lg:p-4">
-                <div className="text-xs md:text-sm">Site</div>
+              <div className="">
+                <div className="">Site</div>
                 {site && (
-                  <Link
-                    target="_blank"
-                    className="text-md break-words md:text-lg"
-                    href={site}
-                  >
+                  <Link target="_blank" className="" href={site}>
                     {site}
                   </Link>
                 )}
