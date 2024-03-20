@@ -7,7 +7,14 @@ export const homePageQuery = groq`
     showcaseProjects[]->{
       _type,
       coverImage,
-      overview,
+      "slug": slug.current,
+      tags,
+      title,
+      projectDetails,
+    },
+    showcaseSketches[]->{
+      _type,
+      coverImage,
       "slug": slug.current,
       tags,
       title,
@@ -29,14 +36,27 @@ export const pagesBySlugQuery = groq`
 export const projectBySlugQuery = groq`
   *[_type == "project" && slug.current == $slug][0] {
     _id,
-    client,
-    coverImage,
-    description,
-    overview,
-    site,
-    "slug": slug.current,
-    tags,
     title,
+    "slug": slug.current,
+    isItIszSzi,
+    referenceToSketches,
+    linkImage,
+    projectInfo,
+    coverImage,
+    gallery,
+    
+  }
+`
+export const sketchesBySlugQuery = groq`
+  *[_type == "sketches" && slug.current == $slug][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    referenceToProject,
+    linkImage,
+    sketchesInfo,
+    coverImage,
+    gallery,    
   }
 `
 
@@ -62,33 +82,6 @@ export const Collaborators_QUERY = groq`*[_type == "Collaborators"][0]{
   intro,
   parts,
 }`
-
-export const sketchBySlugQuery = groq`
-  *[_type == "sketch" && slug.current == $slug][0] {
-    _id,
-    client,
-    coverImage,
-    description,
-    overview,
-    site,
-    "slug": slug.current,
-    tags,
-    title,
-  }
-`
-export const iszsziStudioBySlugQuery = groq`
-  *[_type == "iszsziStudio" && slug.current == $slug][0] {
-    _id,
-    client,
-    coverImage,
-    description,
-    overview,
-    site,
-    "slug": slug.current,
-    tags,
-    title,
-  }
-`
 
 export const settingsQuery = groq`
   *[_type == "settings"][0]{

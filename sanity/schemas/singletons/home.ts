@@ -68,6 +68,19 @@ export default defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'showcaseSketches',
+      title: 'Showcase sketches',
+      description:
+        'These are the sketches that will appear first on your landing page.',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{ type: 'sketches' }],
+        }),
+      ],
+    }),
   ],
   preview: {
     select: {

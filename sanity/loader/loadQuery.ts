@@ -12,6 +12,7 @@ import {
   pagesBySlugQuery,
   projectBySlugQuery,
   settingsQuery,
+  sketchesBySlugQuery,
 } from '@/sanity/lib/queries'
 import { token } from '@/sanity/lib/token'
 import {
@@ -22,6 +23,7 @@ import {
   PagePayload,
   ProjectPayload,
   SettingsPayload,
+  SketchesPayload,
 } from '@/types'
 
 const serverClient = client.withConfig({
@@ -118,6 +120,13 @@ export function loadCollaborators() {
   )
 }
 
+export function loadSketches() {
+  return loadQuery<SketchesPayload | null>(
+    sketchesBySlugQuery,
+    {},
+    { next: { tags: [`sketches`] } },
+  )
+}
 export function loadPage(slug: string) {
   return loadQuery<PagePayload | null>(
     pagesBySlugQuery,

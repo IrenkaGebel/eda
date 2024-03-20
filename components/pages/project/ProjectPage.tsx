@@ -12,8 +12,7 @@ export interface ProjectPageProps {
 
 export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
   // Default to an empty object to allow previews on non-existent documents
-  const { client, coverImage, description, overview, site, tags, title } =
-    data ?? {}
+  const { coverImage, description, site, tags, title } = data ?? {}
 
   return (
     <div>
@@ -29,14 +28,6 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
           />
 
           <div className="">
-            {/* Client */}
-            {client && (
-              <div className="">
-                <div className="">Client</div>
-                <div className="">{client}</div>
-              </div>
-            )}
-
             {/* Site */}
             {site && (
               <div className="">

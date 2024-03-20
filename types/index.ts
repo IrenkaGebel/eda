@@ -1,4 +1,5 @@
 import type { PortableTextBlock } from '@portabletext/types'
+import { Reference } from 'react'
 import type { Image } from 'sanity'
 
 export interface AboutPayload {
@@ -72,34 +73,25 @@ export interface MenuItem {
 export interface showcaseProjects {
   _type: string
   coverImage?: Image
-  overview?: PortableTextBlock[]
+  slug?: string
+  tags?: string[]
+  title?: string
+  projectDetails: string
+}
+
+export interface showcaseSketches {
+  _type: string
+  coverImage?: Image
   slug?: string
   tags?: string[]
   title?: string
 }
 
-// export interface ShowcaseSketches {
-//   _type: string
-//   coverImage?: Image
-//   overview?: PortableTextBlock[]
-//   slug?: string
-//   tags?: string[]
-//   title?: string
-// }
-
-// export interface ShowcaseiszsziStudio {
-//   _type: string
-//   coverImage?: Image
-//   overview?: PortableTextBlock[]
-//   slug?: string
-//   tags?: string[]
-//   title?: string
-// }
-
 export interface HomePagePayload {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
   showcaseProjects?: showcaseProjects[]
+  showcaseSketches?: showcaseSketches[]
   title?: string
 }
 
@@ -112,14 +104,25 @@ export interface PagePayload {
 }
 
 export interface ProjectPayload {
-  client?: string
-  coverImage?: Image
-  description?: PortableTextBlock[]
-  overview?: PortableTextBlock[]
-  site?: string
+  title: string
+  projectDetails: string
   slug: string
-  tags?: string[]
-  title?: string
+  isItIszSzi: boolean
+  referenceToProcess: Reference
+  linkImage: Image
+  projectInfo?: PortableTextBlock[]
+  coverImage?: Image
+  gallery: Image
+}
+
+export interface SketchesPayload {
+  title: string
+  slug: string
+  referenceToProject: Reference
+  linkImage: Image
+  processInfo?: PortableTextBlock[]
+  coverImage?: Image
+  gallery: Image
 }
 
 export interface SettingsPayload {

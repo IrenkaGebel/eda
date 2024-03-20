@@ -13,11 +13,7 @@ export default function Filterbar() {
           <button onClick={() => setShowAll(!showAll)}>
             {showAll ? 'PROJECTS' : 'PROJECTS'}
           </button>
-          {showAll && (
-            <div>
-              <p>shwoww</p>
-            </div>
-          )}
+          {showAll && <div>{<p>shwoww</p>}</div>}
         </div>
         <div className="p-2">
           <Link href="#showcaseSketches">SKETCHES</Link>

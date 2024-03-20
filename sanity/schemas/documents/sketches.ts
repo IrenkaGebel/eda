@@ -2,8 +2,8 @@ import { DocumentIcon, ImageIcon } from '@sanity/icons'
 import { defineArrayMember, defineField, defineType } from 'sanity'
 
 export default defineType({
-  name: 'project',
-  title: 'Projects',
+  name: 'sketches',
+  title: 'Sketches',
   type: 'document',
   fields: [
     defineField({
@@ -24,33 +24,32 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'projectDetails',
-      title: 'project details',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'isItIszSzi',
-      title: 'is it isz',
-      description: 'Is this an isz szi studio project?',
-      type: 'boolean',
-    }),
-    defineField({
-      name: 'referenceToSketches',
-      title: 'Reference to Sketches',
+      name: 'referenceToProject',
+      title: 'Reference to Project',
       type: 'reference',
-      to: [{ type: 'sketches' }],
+      to: [{ type: 'project' }],
     }),
     defineField({
-      name: 'projectInfo',
-      title: 'project Info',
+      name: 'sketchesInfo',
+      title: 'sketches Info',
       type: 'array',
       of: [
-        // Paragraphs
         defineArrayMember({
-          lists: [],
           marks: {
-            annotations: [],
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Link',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'Url',
+                  },
+                ],
+              },
+            ],
             decorators: [
               {
                 title: 'Italic',
@@ -59,6 +58,10 @@ export default defineType({
               {
                 title: 'Strong',
                 value: 'strong',
+              },
+              {
+                title: 'Underline',
+                value: 'underline',
               },
             ],
           },
@@ -71,7 +74,7 @@ export default defineType({
       type: 'image',
       icon: ImageIcon,
       name: 'coverImage',
-      title: 'cover image',
+      title: 'coverImage',
       options: {
         hotspot: true,
       },
