@@ -11,6 +11,7 @@ export const homePageQuery = groq`
       tags,
       title,
       projectDetails,
+      isItIszSzi,
     },
     showcaseSketches[]->{
       _type,

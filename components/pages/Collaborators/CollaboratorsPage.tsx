@@ -13,10 +13,10 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
 
   return (
     <>
+      console.log(data);
       <article>
         <CustomPortableText value={intro as PortableTextBlock[]} />
       </article>
-
       <article id="collaborators">
         {parts && (
           <>

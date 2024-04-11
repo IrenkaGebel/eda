@@ -12,57 +12,31 @@ export interface ProjectPageProps {
 
 export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
   // Default to an empty object to allow previews on non-existent documents
-  const { coverImage, description, site, tags, title } = data ?? {}
+  const {
+    title,
+    projectDetails,
+    projectInfo,
+    referenceToProcess,
+    linkImage,
+    coverImage,
+    gallery,
+  } = data ?? {}
 
   return (
     <div>
-      <div className="mb-20 space-y-6">
-        <div className="rounded-md ">
-          {/* Image  */}
-          <ImageBox
-            data-sanity={encodeDataAttribute?.('coverImage')}
-            image={coverImage}
-            // @TODO add alt field in schema
-            alt=""
-            classesWrapper=" "
-          />
-
-          <div className="">
-            {/* Site */}
-            {site && (
-              <div className="">
-                <div className="">Site</div>
-                {site && (
-                  <Link target="_blank" className="" href={site}>
-                    {site}
-                  </Link>
-                )}
-              </div>
-            )}
-
-            {/* Tags */}
-            <div className="p-3 lg:p-4">
-              <div className="text-xs md:text-sm">Tags</div>
-              <div className="text-md flex flex-row flex-wrap md:text-lg">
-                {tags?.map((tag, key) => (
-                  <div key={key} className="mr-1 break-words ">
-                    #{tag}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Description */}
-        {description && (
-          <CustomPortableText
-            paragraphClasses="font-serif max-w-3xl text-xl text-gray-600"
-            value={description}
-          />
-        )}
+      <div className="text-xl">
+        <p>{title}</p>
+        <p>{projectDetails}</p>
       </div>
-      <div className="absolute left-0 w-screen" />
+      {projectInfo && (
+        <CustomPortableText paragraphClasses="" value={projectInfo} />
+      )}
+      <ImageBox
+        data-sanity={encodeDataAttribute?.('coverImage')}
+        image={coverImage}
+        alt=""
+        classesWrapper=" "
+      />
     </div>
   )
 }

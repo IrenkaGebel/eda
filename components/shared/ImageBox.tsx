@@ -15,8 +15,8 @@ interface ImageBoxProps {
 export default function ImageBox({
   image,
   alt = 'Cover image',
-  width = 3500,
-  height = 2000,
+  width = 1000,
+  height = 1500,
   size = '100vw',
   classesWrapper,
   ...props
@@ -26,12 +26,12 @@ export default function ImageBox({
 
   return (
     <div
-      className={`w-full overflow-hidden rounded-[3px] bg-gray-50 ${classesWrapper}`}
+      className={`w-full overflow-hidden  ${classesWrapper}`}
       data-sanity={props['data-sanity']}
     >
       {imageUrl && (
         <Image
-          className=" size-24"
+          className=" size-48"
           alt={alt}
           width={width}
           height={height}

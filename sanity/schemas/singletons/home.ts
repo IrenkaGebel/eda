@@ -57,27 +57,13 @@ export default defineType({
 
     defineField({
       name: 'showcaseProjects',
-      title: 'Showcase projects',
-      description:
-        'These are the projects that will appear first on your landing page.',
+      title: 'Showcase projects, sketches and isz szi studio works',
+      description: 'These all will appear first on your landing page.',
       type: 'array',
       of: [
         defineArrayMember({
           type: 'reference',
-          to: [{ type: 'project' }],
-        }),
-      ],
-    }),
-    defineField({
-      name: 'showcaseSketches',
-      title: 'Showcase sketches',
-      description:
-        'These are the sketches that will appear first on your landing page.',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'reference',
-          to: [{ type: 'sketches' }],
+          to: [{ type: 'project' }, { type: 'sketches' }],
         }),
       ],
     }),

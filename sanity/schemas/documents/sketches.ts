@@ -3,7 +3,7 @@ import { defineArrayMember, defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'sketches',
-  title: 'Sketches',
+  title: 'sketches',
   type: 'document',
   fields: [
     defineField({

@@ -74,16 +74,15 @@ export interface showcaseProjects {
   _type: string
   coverImage?: Image
   slug?: string
-  tags?: string[]
   title?: string
   projectDetails: string
+  isItIszSzi: boolean
 }
 
 export interface showcaseSketches {
   _type: string
   coverImage?: Image
   slug?: string
-  tags?: string[]
   title?: string
 }
 
@@ -91,7 +90,6 @@ export interface HomePagePayload {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
   showcaseProjects?: showcaseProjects[]
-  showcaseSketches?: showcaseSketches[]
   title?: string
 }
 

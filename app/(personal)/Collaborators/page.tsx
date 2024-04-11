@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { loadCollaborators } from '@/sanity/loader/loadQuery'
 import CollaboratorsPage from '@/components/pages/Collaborators/CollaboratorsPage'
+import { loadCollaborators } from '@/sanity/loader/loadQuery'
 
 export const metadata: Metadata = {
   title: 'Collaborators',
