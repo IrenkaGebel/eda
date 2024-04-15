@@ -23,7 +23,7 @@ export default function Filterbar() {
 
   return (
     <>
-      <div className="flex justify-center items-center bg-butter-bun bottom-0 fixed text-volcano-dust font-regular w-full text-sm">
+      <div className="flex gap-6 justify-center items-center bg-butter-bun bottom-0 fixed text-volcano-dust font-regular w-full text-sm">
         {!activeFilter && (
           <button className="p-4 hidden" onClick={toggleFilters}>
             {'VIEW'}

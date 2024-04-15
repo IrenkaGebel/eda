@@ -16,27 +16,24 @@ export default function ImageBox({
   image,
   alt = 'Cover image',
   width = 1000,
-  height = 1500,
-  size = '100vw',
+  height = 1000,
+  size = '',
   classesWrapper,
   ...props
 }: ImageBoxProps) {
-  const imageUrl =
-    image && urlForImage(image)?.height(height).width(width).fit('crop').url()
+  const imageUrl = image && urlForImage(image)?.url()
 
   return (
-    <div
-      className={`w-full overflow-hidden  ${classesWrapper}`}
-      data-sanity={props['data-sanity']}
-    >
+    <div className={`${classesWrapper}`} data-sanity={props['data-sanity']}>
       {imageUrl && (
         <Image
-          className=" size-48"
+          className={` ${classesWrapper}`}
           alt={alt}
           width={width}
           height={height}
           sizes={size}
           src={imageUrl}
+          objectFit="cover"
         />
       )}
     </div>

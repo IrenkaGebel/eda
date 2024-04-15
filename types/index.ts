@@ -76,6 +76,7 @@ export interface showcaseProjects {
   slug?: string
   title?: string
   projectDetails: string
+  projectInfo: PortableTextBlock[]
   isItIszSzi: boolean
 }
 
@@ -84,6 +85,7 @@ export interface showcaseSketches {
   coverImage?: Image
   slug?: string
   title?: string
+  sketchesInfo: PortableTextBlock[]
 }
 
 export interface HomePagePayload {

@@ -10,7 +10,7 @@ export default function Navbar() {
             <h1>home (of) eda</h1>
           </Link>
         </div>
-        <div className="flex gap-2 p-2 ">
+        <div className="flex gap-6 p-2 ">
           <nav>
             <Link href="/about">about</Link>
           </nav>

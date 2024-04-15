@@ -1,7 +1,5 @@
 'use client'
-import type { PortableTextBlock } from '@portabletext/types'
 
-import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import ImageBox from '@/components/shared/ImageBox'
 import type { showcaseProjects } from '@/types'
 
@@ -14,12 +12,12 @@ export function ProjectListItem(props: ProjectProps) {
   const { project } = props
 
   return (
-    <div className="">
-      <div className="left-0 sm">
+    <div className="flex justify-center">
+      <div className="">
         <ImageBox
           image={project.coverImage}
           alt={`Cover image from ${project.title}`}
-          classesWrapper=""
+          size={'80vw'}
         />
       </div>
     </div>

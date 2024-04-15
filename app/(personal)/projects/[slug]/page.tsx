@@ -25,8 +25,8 @@ export async function generateMetadata(
 
   return {
     title: project?.title,
-    description: project?.overview
-      ? toPlainText(project.overview)
+    description: project?.projectInfo
+      ? toPlainText(project.projectInfo)
       : (await parent).description,
     openGraph: ogImage
       ? {

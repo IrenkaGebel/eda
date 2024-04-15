@@ -11,6 +11,7 @@ export const homePageQuery = groq`
       tags,
       title,
       projectDetails,
+      projectInfo,
       isItIszSzi,
     },
     showcaseSketches[]->{
@@ -43,6 +44,7 @@ export const projectBySlugQuery = groq`
     referenceToSketches,
     linkImage,
     projectInfo,
+    projectDetails,
     coverImage,
     gallery,
     

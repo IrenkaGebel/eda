@@ -9,6 +9,7 @@ import { resolveHref } from '@/sanity/lib/utils'
 import type { HomePagePayload } from '@/types'
 
 import { ProjectListItem } from './ProjectListItem'
+import { CustomPortableText } from '@/components/shared/CustomPortableText'
 
 export interface HomePageProps {
   data: HomePagePayload | null
@@ -65,7 +66,18 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                     'slug',
                   ])}
                 >
-                  <h1 className={fontSizeClass}>{project.title}</h1>
+                  <div className="flex flex-col items-center text-3xl p-4 ">
+                    <h1 className={fontSizeClass}>{project.title}</h1>
+                    <p className="">{project.projectDetails}</p>
+                    <p className="width-5">
+                      {project.projectInfo && (
+                        <CustomPortableText
+                          paragraphClasses=""
+                          value={project.projectInfo}
+                        />
+                      )}
+                    </p>
+                  </div>
                   <ProjectListItem project={project} odd={key % 2} />
                 </Link>
               )
