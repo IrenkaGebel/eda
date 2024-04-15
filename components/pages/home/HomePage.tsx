@@ -5,11 +5,12 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname, useSearchParams } from 'next/navigation'
 
+import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import { resolveHref } from '@/sanity/lib/utils'
 import type { HomePagePayload } from '@/types'
 
 import { ProjectListItem } from './ProjectListItem'
-import { CustomPortableText } from '@/components/shared/CustomPortableText'
+import ImageBox from '@/components/shared/ImageBox'
 
 export interface HomePageProps {
   data: HomePagePayload | null
@@ -40,15 +41,15 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
               const isProject = project._type === 'project'
               const isSketches = project._type === 'sketches'
               const isItIszSzi = project.isItIszSzi === true
-              const fontSizeClass = clsx({
-                'text-xl':
+              const imageWidthClass = clsx({
+                'w-96':
                   (filter === 'project' && by === null && isProject) ||
                   (filter === 'project' &&
                     by === 'isz-szi-studio' &&
                     isProject &&
                     isItIszSzi) ||
                   (filter === 'sketches' && isSketches),
-                'text-sm':
+                'w-44':
                   (filter === 'project' && by === null && !isProject) ||
                   (filter === 'project' &&
                     by === 'isz-szi-studio' &&
@@ -67,18 +68,31 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                   ])}
                 >
                   <div className="flex flex-col items-center text-3xl p-4 ">
-                    <h1 className={fontSizeClass}>{project.title}</h1>
-                    <p className="">{project.projectDetails}</p>
-                    <p className="width-5">
-                      {project.projectInfo && (
-                        <CustomPortableText
-                          paragraphClasses=""
-                          value={project.projectInfo}
+                    {project.title}
+                    {project.projectDetails}
+
+                    {project.projectInfo && (
+                      <CustomPortableText
+                        paragraphClasses=""
+                        value={project.projectInfo}
+                      />
+                    )}
+
+                    {/* <ProjectListItem
+                      className={imageWidthClass}
+                      project={project}
+                      odd={key % 2}
+                    /> */}
+                    <div className="flex justify-center">
+                      <div className={imageWidthClass}>
+                        <ImageBox
+                          image={project.coverImage}
+                          alt={`Cover image from ${project.title}`}
+                          size={'70vw'}
                         />
-                      )}
-                    </p>
+                      </div>
+                    </div>
                   </div>
-                  <ProjectListItem project={project} odd={key % 2} />
                 </Link>
               )
             })}
