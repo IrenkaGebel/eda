@@ -18,22 +18,30 @@ export default function Filterbar() {
 
   const resetFilters = () => {
     setActiveFilter(null)
+    setShowFilters(true)
   }
 
   return (
     <>
-      <div className="flex justify-between-8 items-center bg-yellow-200 left-0 bottom-0 fixed text-xL p-4">
-        <button className="p-4" onClick={toggleFilters}>
-          {'VIEW'}
-        </button>
+      <div className="flex justify-center items-center bg-butter-bun bottom-0 fixed text-volcano-dust font-regular w-full text-sm">
+        {!activeFilter && (
+          <button className="p-4 hidden" onClick={toggleFilters}>
+            {'VIEW'}
+          </button>
+        )}
         {activeFilter && <div className="p-2">{activeFilter}</div>}
+        {activeFilter && (
+          <div className="">
+            <button onClick={resetFilters}>–</button>
+          </div>
+        )}
 
         {showFilters && (
           <>
             <div className="p-2">
               <Link
                 href={'/?filter=project'}
-                onClick={() => handleFilterClick('PROJECT')}
+                onClick={() => handleFilterClick('PROJECTS')}
               >
                 PROJECTS
               </Link>
@@ -55,11 +63,6 @@ export default function Filterbar() {
               </Link>
             </div>
           </>
-        )}
-        {activeFilter && (
-          <div className="">
-            <button onClick={resetFilters}>–</button>
-          </div>
         )}
       </div>
     </>

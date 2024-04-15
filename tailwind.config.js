@@ -8,13 +8,20 @@ module.exports = {
     './intro-template/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    ...theme,
-    // Overriding fontFamily to use @next/font loaded families
-    fontFamily: {
-      mono: 'var(--font-mono)',
-      sans: 'var(--font-sans)',
-      serif: 'var(--font-serif)',
+    extend: {
+      colors: {
+        'butter-bun': '#F0EFD5',
+        'volcano-dust': '#3B3A3A',
+        'coral-sweets': '#F96F88',
+        'open-sky': '#AADCFF',
+      },
+      // Overriding fontFamily to use @next/font loaded families
+      fontFamily: {
+        mono: 'var(--font-mono)',
+        sans: 'var(--font-sans)',
+        serif: 'var(--font-serif)',
+      },
     },
+    plugins: [require('@tailwindcss/typography')],
   },
-  plugins: [require('@tailwindcss/typography')],
 }
