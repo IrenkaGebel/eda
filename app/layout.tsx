@@ -20,21 +20,21 @@ const lunchtype = localFont({
       weight: '500',
       style: 'medium',
     },
-    {
-      path: './lunchtype23-light-italic.woff2',
-      weight: '300',
-      style: 'lightItalic',
-    },
-    {
-      path: './lunchtype23-regular-italic.woff2',
-      weight: '400',
-      style: 'regularItalic',
-    },
-    {
-      path: './lunchtype23-medium-italic.woff2',
-      weight: '500',
-      style: 'mediumItalic',
-    },
+    // {
+    //   path: './lunchtype23-light-italic.woff2',
+    //   weight: '300',
+    //   style: 'lightItalic',
+    // },
+    // {
+    //   path: './lunchtype23-regular-italic.woff2',
+    //   weight: '400',
+    //   style: 'regularItalic',
+    // },
+    // {
+    //   path: './lunchtype23-medium-italic.woff2',
+    //   weight: '500',
+    //   style: 'mediumItalic',
+    // },
   ],
 })
 
