@@ -6,7 +6,7 @@ import { draftMode } from 'next/headers'
 import { client } from '@/sanity/lib/client'
 import {
   ABOUT_QUERY,
-  Collaborators_QUERY,
+  collaborators_QUERY,
   COLOPHON_QUERY,
   homePageQuery,
   pagesBySlugQuery,
@@ -114,17 +114,17 @@ export function loadColophon() {
 
 export function loadCollaborators() {
   return loadQuery<CollaboratorsPayload | null>(
-    Collaborators_QUERY,
+    collaborators_QUERY,
     {},
-    { next: { tags: [`Collaborators`] } },
+    { next: { tags: [`collaborators`] } },
   )
 }
 
-export function loadSketches() {
+export function loadSketches(slug: string) {
   return loadQuery<SketchesPayload | null>(
     sketchesBySlugQuery,
-    {},
-    { next: { tags: [`sketches`] } },
+    { slug },
+    { next: { tags: [`sketches:${slug}`] } },
   )
 }
 export function loadPage(slug: string) {

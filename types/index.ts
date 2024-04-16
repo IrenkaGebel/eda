@@ -1,5 +1,4 @@
 import type { PortableTextBlock } from '@portabletext/types'
-import { Reference } from 'react'
 import type { Image } from 'sanity'
 
 export interface AboutPayload {
@@ -80,13 +79,13 @@ export interface showcaseProjects {
   isItIszSzi: boolean
 }
 
-export interface showcaseSketches {
-  _type: string
-  coverImage?: Image
-  slug?: string
-  title?: string
-  sketchesInfo: PortableTextBlock[]
-}
+// export interface showcaseSketches {
+//   _type: string
+//   coverImage?: Image
+//   slug?: string
+//   title?: string
+//   sketchesInfo: PortableTextBlock[]
+// }
 
 export interface HomePagePayload {
   footer?: PortableTextBlock[]
@@ -108,19 +107,33 @@ export interface ProjectPayload {
   projectDetails: string
   slug: string
   isItIszSzi: boolean
-  referenceToProcess: Reference
+  referenceToSketches?: {
+    slug: {
+      current: string
+    }
+  }
   linkImage: Image
   projectInfo?: PortableTextBlock[]
   coverImage?: Image
   gallery: Image
 }
+// interface referenceToSketchesObject {
+//   slug: slugObject
+// }
+// interface slugObject {
+//   current: string
+// }
 
 export interface SketchesPayload {
   title: string
-  slug: string
-  referenceToProject: Reference
+  slug?: string
+  referenceToProject?: {
+    slug: {
+      current: string
+    }
+  }
   linkImage: Image
-  processInfo?: PortableTextBlock[]
+  sketchesInfo?: PortableTextBlock[]
   coverImage?: Image
   gallery: Image
 }

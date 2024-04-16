@@ -15,7 +15,7 @@ export default function Navbar() {
             <Link href="/about">about</Link>
           </nav>
           <nav>
-            <Link href="/Collaborators">for collaborators</Link>
+            <Link href="/collaborators">for collaborators</Link>
           </nav>
           <nav>
             <Link href="/colophon">colophon</Link>

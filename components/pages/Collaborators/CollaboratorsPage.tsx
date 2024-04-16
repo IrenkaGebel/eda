@@ -1,11 +1,13 @@
+'use client'
+import { EncodeDataAttributeCallback } from '@sanity/react-loader'
 import React from 'react'
-import { PortableTextBlock } from 'sanity'
 
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import { CollaboratorsPayload } from '@/types'
 
 export interface CollaboratorsPageProps {
   data: CollaboratorsPayload | null
+  encodeDataAttribute?: EncodeDataAttributeCallback
 }
 
 export function Collaborators({ data }: CollaboratorsPageProps) {
@@ -13,9 +15,8 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
 
   return (
     <>
-      console.log(data);
       <article>
-        <CustomPortableText value={intro as PortableTextBlock[]} />
+        <CustomPortableText value={intro} />
       </article>
       <article id="collaborators">
         {parts && (
@@ -24,7 +25,8 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
             <h2>{parts.wordCountOne}</h2>
             <section>
               <CustomPortableText
-                value={parts.contentOne as PortableTextBlock[]}
+                paragraphClasses=""
+                value={parts.contentOne}
               />
             </section>
 
@@ -32,7 +34,8 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
             <h2>{parts.wordCountTwo}</h2>
             <section>
               <CustomPortableText
-                value={parts.contentTwo as PortableTextBlock[]}
+                paragraphClasses=""
+                value={parts.contentTwo}
               />
             </section>
 
@@ -41,7 +44,8 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
             <section>
               {' '}
               <CustomPortableText
-                value={parts.contentThree as PortableTextBlock[]}
+                paragraphClasses=""
+                value={parts.contentThree}
               />
             </section>
 
@@ -49,7 +53,8 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
             <h2>{parts.wordCountFour}</h2>
             <section>
               <CustomPortableText
-                value={parts.contentFour as PortableTextBlock[]}
+                paragraphClasses=""
+                value={parts.contentFour}
               />
             </section>
           </>

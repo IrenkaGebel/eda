@@ -3,7 +3,6 @@ import { groq } from 'next-sanity'
 export const homePageQuery = groq`
   *[_type == "home"][0]{
     _id,
-    overview,
     showcaseProjects[]->{
       _type,
       coverImage,
@@ -13,13 +12,6 @@ export const homePageQuery = groq`
       projectDetails,
       projectInfo,
       isItIszSzi,
-    },
-    showcaseSketches[]->{
-      _type,
-      coverImage,
-      "slug": slug.current,
-      tags,
-      title,
     },
     title,
   }
@@ -41,7 +33,9 @@ export const projectBySlugQuery = groq`
     title,
     "slug": slug.current,
     isItIszSzi,
-    referenceToSketches,
+    referenceToSketches->{
+      slug
+    },
     linkImage,
     projectInfo,
     projectDetails,
@@ -50,16 +44,17 @@ export const projectBySlugQuery = groq`
     
   }
 `
-export const sketchesBySlugQuery = groq`
-  *[_type == "sketches" && slug.current == $slug][0] {
+export const sketchesBySlugQuery = groq`*[_type == "sketches" && slug.current == $slug][0] {
     _id,
     title,
     "slug": slug.current,
-    referenceToProject,
+    referenceToProject->{
+      slug
+    },
     linkImage,
     sketchesInfo,
     coverImage,
-    gallery,    
+    gallery   
   }
 `
 
@@ -79,7 +74,7 @@ export const COLOPHON_QUERY = groq`*[_type == "colophon"][0]{
   revision,
 }`
 
-export const Collaborators_QUERY = groq`*[_type == "Collaborators"][0]{
+export const collaborators_QUERY = groq`*[_type == "collaborators"][0]{
   _id,
   title,
   intro,

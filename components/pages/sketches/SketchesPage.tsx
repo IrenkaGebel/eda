@@ -4,37 +4,36 @@ import Link from 'next/link'
 
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import ImageBox from '@/components/shared/ImageBox'
-import type { ProjectPayload } from '@/types'
+import { SketchesPayload } from '@/types'
 
-export interface ProjectPageProps {
-  data: ProjectPayload | null
+export interface SketchesPageProps {
+  data: SketchesPayload | null
   encodeDataAttribute?: EncodeDataAttributeCallback
 }
 
-export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
+export function SketchesPage({ data, encodeDataAttribute }: SketchesPageProps) {
   // Default to an empty object to allow previews on non-existent documents
   const {
     title,
-    projectDetails,
-    projectInfo,
-    referenceToSketches,
-    linkImage,
+    sketchesInfo,
     coverImage,
     gallery,
+    referenceToProject,
+    linkImage,
   } = data ?? {}
 
   return (
     <div className="text-xl font-light italic">
       <div className="flex flex-col justify-items-center p-8">
         {title}
-        {projectDetails}{' '}
-        {projectInfo && (
-          <CustomPortableText paragraphClasses="" value={projectInfo} />
+
+        {sketchesInfo && (
+          <CustomPortableText paragraphClasses="" value={sketchesInfo} />
         )}
       </div>
       {/* reference to sketches as 'view process' and 'link image' */}
-      {referenceToSketches?.slug.current && (
-        <Link href={'/sketches/' + referenceToSketches.slug.current}>
+      {referenceToProject?.slug.current && (
+        <Link href={'/projects/' + referenceToProject.slug.current}>
           view process{' '}
           <ImageBox
             data-sanity={encodeDataAttribute?.('linkImage')}
@@ -63,4 +62,4 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
   )
 }
 
-export default ProjectPage
+export default SketchesPage

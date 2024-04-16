@@ -9,7 +9,6 @@ import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import { resolveHref } from '@/sanity/lib/utils'
 import type { HomePagePayload } from '@/types'
 
-import { ProjectListItem } from './ProjectListItem'
 import ImageBox from '@/components/shared/ImageBox'
 
 export interface HomePageProps {
@@ -67,23 +66,25 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                     'slug',
                   ])}
                 >
-                  <div className="flex flex-col items-center text-3xl p-4 ">
-                    {project.title}
-                    {project.projectDetails}
+                  <div className="text-3xl font-light ">
+                    <div className="flex flex-col justify-items-center p-8">
+                      {project.title}
+                      {project.projectDetails}
 
-                    {project.projectInfo && (
-                      <CustomPortableText
-                        paragraphClasses=""
-                        value={project.projectInfo}
-                      />
-                    )}
+                      {/* {project.projectInfo && (
+                        <CustomPortableText
+                          paragraphClasses=""
+                          value={project.projectInfo}
+                        />
+                      )} */}
+                    </div>
 
                     {/* <ProjectListItem
                       className={imageWidthClass}
                       project={project}
                       odd={key % 2}
                     /> */}
-                    <div className="flex justify-center">
+                    <div className="flex justify-center pb-32 pt-12">
                       <div className={imageWidthClass}>
                         <ImageBox
                           image={project.coverImage}

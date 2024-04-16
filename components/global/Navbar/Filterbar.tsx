@@ -32,7 +32,9 @@ export default function Filterbar() {
         {activeFilter && <div className="p-2">{activeFilter}</div>}
         {activeFilter && (
           <div className="">
-            <button onClick={resetFilters}>–</button>
+            <Link href={'/'} onClick={resetFilters}>
+              –
+            </Link>
           </div>
         )}
 

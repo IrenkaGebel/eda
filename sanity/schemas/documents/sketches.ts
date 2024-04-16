@@ -132,7 +132,6 @@ export default defineType({
       name: 'linkImage',
       title: 'Link Image',
       type: 'image',
-      validation: (rule) => rule.required(),
     }),
   ],
 })

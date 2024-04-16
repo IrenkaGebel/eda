@@ -1,8 +1,8 @@
 import { defineArrayMember, defineField, defineType } from 'sanity'
 
 export default defineType({
-  name: 'Collaborators',
-  title: 'Collaborators',
+  name: 'collaborators',
+  title: 'collaborators',
   type: 'document',
   fields: [
     defineField({

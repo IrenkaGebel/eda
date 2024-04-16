@@ -15,7 +15,7 @@ import home from '@/sanity/schemas/singletons/home'
 import settings from '@/sanity/schemas/singletons/settings'
 
 import about from './sanity/schemas/documents/about'
-import Collaborators from './sanity/schemas/documents/collaborators'
+import collaborators from './sanity/schemas/documents/collaborators'
 import colophon from './sanity/schemas/documents/colophon'
 import project from './sanity/schemas/documents/project'
 import sketches from './sanity/schemas/documents/sketches'
@@ -36,7 +36,7 @@ export default defineConfig({
       // Documents
       project,
       sketches,
-      Collaborators,
+      collaborators,
       about,
       colophon,
     ],
