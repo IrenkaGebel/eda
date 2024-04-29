@@ -122,7 +122,7 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
     content: any,
   ) => (
     <>
-      <div className="p-4">
+      <div className="p-4 mt-6 mb-6">
         <div className="flex flex-row justify-between border border-black">
           <button className="p-4" onClick={() => toggleSection(sectionId)}>
             {heading}

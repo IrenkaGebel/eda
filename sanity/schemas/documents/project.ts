@@ -24,10 +24,36 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'projectDetails',
-      title: 'project details',
+      name: 'date',
+      title: 'Date',
       type: 'string',
-      validation: (rule) => rule.required(),
+    }),
+
+    defineField({
+      name: 'forWhomAndWhere',
+      title: 'for whom and where',
+      type: 'array',
+      of: [
+        // Paragraphs
+        defineArrayMember({
+          lists: [],
+          marks: {
+            annotations: [],
+            decorators: [
+              {
+                title: 'Italic',
+                value: 'em',
+              },
+              {
+                title: 'Strong',
+                value: 'strong',
+              },
+            ],
+          },
+          styles: [],
+          type: 'block',
+        }),
+      ],
     }),
     defineField({
       name: 'isItIszSzi',
@@ -44,6 +70,32 @@ export default defineType({
     defineField({
       name: 'projectInfo',
       title: 'project Info',
+      type: 'array',
+      of: [
+        // Paragraphs
+        defineArrayMember({
+          lists: [],
+          marks: {
+            annotations: [],
+            decorators: [
+              {
+                title: 'Italic',
+                value: 'em',
+              },
+              {
+                title: 'Strong',
+                value: 'strong',
+              },
+            ],
+          },
+          styles: [],
+          type: 'block',
+        }),
+      ],
+    }),
+    defineField({
+      name: 'additionalInfo',
+      title: 'additional Info',
       type: 'array',
       of: [
         // Paragraphs
@@ -96,35 +148,7 @@ export default defineType({
         }),
       ],
     }),
-    defineField({
-      name: 'gallery',
-      type: 'object',
-      title: 'Gallery',
-      fields: [
-        {
-          name: 'images',
-          type: 'array',
-          title: 'Images',
-          of: [
-            {
-              name: 'image',
-              type: 'image',
-              title: 'Image',
-              options: {
-                hotspot: true,
-              },
-              fields: [
-                {
-                  name: 'alt',
-                  type: 'string',
-                  title: 'Alternative text',
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    }),
+
     defineField({
       name: 'linkImage',
       title: 'Link Image',

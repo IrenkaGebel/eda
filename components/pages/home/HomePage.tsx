@@ -10,6 +10,7 @@ import { resolveHref } from '@/sanity/lib/utils'
 import type { HomePagePayload } from '@/types'
 
 import ImageBox from '@/components/shared/ImageBox'
+import sketches from '@/sanity/schemas/documents/sketches'
 
 export interface HomePageProps {
   data: HomePagePayload | null
@@ -67,23 +68,28 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                   ])}
                 >
                   <div className="text-3xl font-light ">
-                    <div className="flex flex-col justify-items-center p-8">
-                      {project.title}
-                      {project.projectDetails}
-
-                      {/* {project.projectInfo && (
+                    <div className="flex flex-wrap justify-items-center pr-8 pl-8 pt-8 pb-4 ">
+                      <div className="">{project.title}</div>
+                      <div className="text-sm p-2 font-normal">
+                        {project.date}{' '}
+                      </div>
+                      {project.forWhomAndWhere && (
+                        <CustomPortableText
+                          paragraphClasses=""
+                          value={project.forWhomAndWhere}
+                        />
+                      )}
+                    </div>
+                    <div className="pl-8 pr-8">
+                      {' '}
+                      {project.projectInfo && (
                         <CustomPortableText
                           paragraphClasses=""
                           value={project.projectInfo}
                         />
-                      )} */}
+                      )}
                     </div>
 
-                    {/* <ProjectListItem
-                      className={imageWidthClass}
-                      project={project}
-                      odd={key % 2}
-                    /> */}
                     <div className="flex justify-center pb-32 pt-12">
                       <div className={imageWidthClass}>
                         <ImageBox

@@ -16,6 +16,7 @@ export default defineType({
       type: 'object',
       fields: [
         { title: 'heading Eda', name: 'headingEda', type: 'string' },
+        { title: 'heading caption', name: 'headingCaption', type: 'string' },
         {
           name: 'bioEda',
           type: 'array',

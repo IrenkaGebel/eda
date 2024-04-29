@@ -13,9 +13,18 @@ export function Colophon({ data }: ColophonPageProps) {
 
   return (
     <>
-      <CustomPortableText value={info as PortableTextBlock[]} />
-      <p>{revision}</p>
-      <p>{typeUsed}</p>
+      <div className="text-coral-sweets p-4 h-dvh text-right flex flex-col justify-evenly">
+        <div className=" ">
+          {' '}
+          <CustomPortableText value={info as PortableTextBlock[]} />
+        </div>
+        <div>
+          <p>{revision}</p>
+        </div>
+        <div>
+          <p>{typeUsed}</p>
+        </div>
+      </div>
     </>
   )
 }

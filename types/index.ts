@@ -12,6 +12,7 @@ export interface AboutPayload {
 export interface edaGroup {
   _type: string
   headingEda: string
+  headingCaption: string
   bioEda: PortableTextBlock[]
   headingContact: string
   contactEda: PortableTextBlock[]
@@ -74,8 +75,10 @@ export interface showcaseProjects {
   coverImage?: Image
   slug?: string
   title?: string
-  projectDetails: string
+  forWhomAndWhere: PortableTextBlock
+  date: string
   projectInfo: PortableTextBlock[]
+  additionalInfo: PortableTextBlock
   isItIszSzi: boolean
 }
 
@@ -104,8 +107,9 @@ export interface PagePayload {
 
 export interface ProjectPayload {
   title: string
-  projectDetails: string
+  forWhomAndWhere: PortableTextBlock
   slug: string
+  date: string
   isItIszSzi: boolean
   referenceToSketches?: {
     slug: {
@@ -114,9 +118,11 @@ export interface ProjectPayload {
   }
   linkImage: Image
   projectInfo?: PortableTextBlock[]
+  additionalInfo: PortableTextBlock
   coverImage?: Image
-  gallery: Image
+  gallery?: Image
 }
+
 // interface referenceToSketchesObject {
 //   slug: slugObject
 // }
