@@ -23,15 +23,21 @@ export default function Filterbar() {
 
   return (
     <>
-      <div className="flex gap-6 justify-center items-center bg-butter-bun bottom-0 fixed text-volcano-dust font-regular w-full text-sm">
+      <div
+        className="flex gap-6 justify-center items-center bg-butter-bun bottom-0 fixed text-volcano-dust font-regular w-full text-sm 
+      lg:pt-2 lg:pb-2 lg:pl-3.5 lg:flex lg:justify-start lg:text-4xl lg:bottom-4 lg:left-4 lg:max-w-fit"
+      >
         {!activeFilter && (
-          <button className="p-4 hidden" onClick={toggleFilters}>
+          <button
+            className="p-4 lg:p-0 lg:pl-2 lg:pr-4 hidden lg:block lg:text-6xl"
+            onClick={toggleFilters}
+          >
             {'VIEW'}
           </button>
         )}
         {activeFilter && <div className="p-2">{activeFilter}</div>}
         {activeFilter && (
-          <div className="">
+          <div className="lg:p-1 lg:pr-6">
             <Link href={'/'} onClick={resetFilters}>
               –
             </Link>
@@ -40,7 +46,7 @@ export default function Filterbar() {
 
         {showFilters && (
           <>
-            <div className="p-2">
+            <div className="p-2 lg:p-0">
               <Link
                 href={'/?filter=project'}
                 onClick={() => handleFilterClick('PROJECTS')}
@@ -48,7 +54,7 @@ export default function Filterbar() {
                 PROJECTS
               </Link>
             </div>
-            <div className="p=2">
+            <div className="p=2 lg:p-0">
               <Link
                 href={'/?filter=sketches'}
                 onClick={() => handleFilterClick('SKETCHES')}
@@ -56,10 +62,10 @@ export default function Filterbar() {
                 SKETCHES
               </Link>
             </div>
-            <div className="p-2">
+            <div className="p-2 lg:p-0 lg:pr-4">
               <Link
                 href={'/?filter=project&by=isz-szi-studio'}
-                onClick={() => handleFilterClick('ISZ-SZI-STUDIO')}
+                onClick={() => handleFilterClick('ISZ SZI STUDIO')}
               >
                 ISZ SZI STUDIO
               </Link>

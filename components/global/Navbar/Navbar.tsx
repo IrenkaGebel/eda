@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <>
       <div className="z-50 flex flex-row justify-between bg-open-sky md:bg-transparent text-volcano-dust relative sticky top-0 font-medium text-sm ">
-        <div className="italic pl-4 pt-2 ">
+        <div className="italic pl-4 pt-2 lg:w-20 ">
           <Link href="/">
             <h1>home (of) eda</h1>
           </Link>

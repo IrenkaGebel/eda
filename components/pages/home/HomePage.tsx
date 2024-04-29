@@ -80,7 +80,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                         />
                       )}
                     </div>
-                    <div className="pl-8 pr-8">
+                    <div className="pl-8 pr-8 lg:hidden">
                       {' '}
                       {project.projectInfo && (
                         <CustomPortableText
