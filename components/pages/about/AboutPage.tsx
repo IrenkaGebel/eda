@@ -13,11 +13,14 @@ export function About({ data }: AboutPageProps) {
 
   return (
     <>
-      <div className="flex flex-col gap-y-28 snap-mandatory ">
-        <article id="Eda" className="p-4 snap-start">
+      <div className="flex flex-col gap-y-28 ">
+        <article
+          id="Eda"
+          className="p-4 lg:flex lg:flex-row  lg:gap-x-14 lg:justify-center"
+        >
           {edaGroup && (
             <>
-              <section className="snap-start">
+              <section className="lg:w-1/3">
                 <div className="mt-8 mb-8 text-volcano-dust flex gap-8 items-baseline">
                   <h1 className="text-6xl">{edaGroup.headingEda}</h1>
                   <h2 className="">{edaGroup.headingCaption}</h2>
@@ -26,7 +29,8 @@ export function About({ data }: AboutPageProps) {
                   value={edaGroup.bioEda as PortableTextBlock[]}
                 />
               </section>
-              <section>
+
+              <section className="lg:pt-4">
                 <h1 className="mt-8 mb-8 text-volcano-dust text-5xl">
                   {edaGroup.headingContact}
                 </h1>
@@ -34,8 +38,7 @@ export function About({ data }: AboutPageProps) {
                 <CustomPortableText
                   value={edaGroup.contactEda as PortableTextBlock[]}
                 />
-              </section>
-              <section>
+
                 <h1 className="mt-8 mb-8 text-volcano-dust text-5xl">
                   {edaGroup.headingWork}
                 </h1>
@@ -48,10 +51,13 @@ export function About({ data }: AboutPageProps) {
           )}
         </article>
 
-        <article id="Iszszi" className="p-4 mb-32 snap-start">
+        <article
+          id="Iszszi"
+          className="p-4 lg:flex lg:flex-row lg:gap-x-14 lg:justify-center "
+        >
           {iszsziGroup && (
             <>
-              <section className="">
+              <section className="lg:w-1/3">
                 <h1 className="text-6xl text-volcano-dust mt-8 mb-8 ">
                   {iszsziGroup.headingIszszi}
                 </h1>
@@ -60,7 +66,8 @@ export function About({ data }: AboutPageProps) {
                   value={iszsziGroup.bioIszszi as PortableTextBlock[]}
                 />
               </section>
-              <section>
+
+              <section className="pb-32 lg:pt-4 ">
                 <h1 className="text-5xl text-volcano-dust mt-8 mb-8 ">
                   {iszsziGroup.headingContactIszszi}
                 </h1>
@@ -68,9 +75,8 @@ export function About({ data }: AboutPageProps) {
                 <CustomPortableText
                   value={iszsziGroup.contactIszszi as PortableTextBlock[]}
                 />
-              </section>
-              <section>
-                <h1 className="text-5xl text-volcano-dust mt-8 mb-8 ">
+
+                <h1 className="text-5xl text-volcano-dust mt-8 mb-8">
                   {iszsziGroup.headingWorkIszszi}
                 </h1>
 

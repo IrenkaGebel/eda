@@ -122,15 +122,15 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
     content: any,
   ) => (
     <>
-      <div className="p-4 mt-6 mb-6">
-        <div className="flex flex-row justify-between border border-black">
-          <button className="p-4" onClick={() => toggleSection(sectionId)}>
+      <div className="p-4 mt-6 mb-6 max-w-180">
+        <div className="flex flex-row justify-between border border-black lg:w-80 ">
+          <button className="p-4 " onClick={() => toggleSection(sectionId)}>
             {heading}
           </button>
           <h2 className="p-4 text-slate-600"> {wordCount}</h2>
         </div>
         {showSections[sectionId] && (
-          <section className="p-4 text-justify">
+          <section className="p-4 text-justify lg:max-w-80">
             <CustomPortableText value={content} />
           </section>
         )}
@@ -140,41 +140,53 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
 
   return (
     <>
-      <div className="p-8">
+      <div className="p-8 lg:mb-36 lg:p-0 lg:place-content-center">
         {data && (
           <>
-            <article className="text-5xl font-light italic pt-4 pb-16 ">
+            <article className="z-40 text-5xl font-light italic pt-4 pb-16 lg:ml-12 lg:mr-12 lg:text-4xl">
               <CustomPortableText value={data.intro} />
             </article>
-
-            {data.parts && (
-              <>
-                {renderSection(
-                  'part1',
-                  data.parts.headingOne,
-                  data.parts.wordCountOne,
-                  data.parts.contentOne,
-                )}
-                {renderSection(
-                  'part2',
-                  data.parts.headingTwo,
-                  data.parts.wordCountTwo,
-                  data.parts.contentTwo,
-                )}
-                {renderSection(
-                  'part3',
-                  data.parts.headingThree,
-                  data.parts.wordCountThree,
-                  data.parts.contentThree,
-                )}
-                {renderSection(
-                  'part4',
-                  data.parts.headingFour,
-                  data.parts.wordCountFour,
-                  data.parts.contentFour,
-                )}
-              </>
-            )}
+            <div className="">
+              <div className="lg:border lg:border-black lg:rotate-90 lg:pt-2  lg:border-l-0 lg:border-r-0 lg:border-slate-60 "></div>
+            </div>
+            <div className="lg:flex lg:flex-col lg:items-center lg:gap-36">
+              {data.parts && (
+                <>
+                  <div className="lg:pr-96">
+                    {renderSection(
+                      'part1',
+                      data.parts.headingOne,
+                      data.parts.wordCountOne,
+                      data.parts.contentOne,
+                    )}
+                  </div>
+                  <div className="lg:pl-96 lg:pt-36">
+                    {renderSection(
+                      'part2',
+                      data.parts.headingTwo,
+                      data.parts.wordCountTwo,
+                      data.parts.contentTwo,
+                    )}
+                  </div>
+                  <div className="lg:pr-96 lg:pt-96">
+                    {renderSection(
+                      'part3',
+                      data.parts.headingThree,
+                      data.parts.wordCountThree,
+                      data.parts.contentThree,
+                    )}
+                  </div>
+                  <div className="lg:pl-96 lg:pt-72">
+                    {renderSection(
+                      'part4',
+                      data.parts.headingFour,
+                      data.parts.wordCountFour,
+                      data.parts.contentFour,
+                    )}
+                  </div>
+                </>
+              )}
+            </div>
           </>
         )}
       </div>

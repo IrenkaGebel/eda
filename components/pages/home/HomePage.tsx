@@ -29,7 +29,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
 
   return (
     <>
-      <div className="">
+      <div className="pb-64">
         {/* Showcase projects */}{' '}
         {showcaseProjects && showcaseProjects.length > 0 && (
           <div className="">
@@ -41,6 +41,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
               const isProject = project._type === 'project'
               const isSketches = project._type === 'sketches'
               const isItIszSzi = project.isItIszSzi === true
+
               const imageWidthClass = clsx({
                 'w-96':
                   (filter === 'project' && by === null && isProject) ||
@@ -57,6 +58,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                   (filter === 'sketches' && !isSketches) ||
                   (filter === null && by === null),
               })
+
               return (
                 <Link
                   key={key}
@@ -68,18 +70,21 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                   ])}
                 >
                   <div className="text-3xl font-light ">
-                    <div className="flex flex-wrap justify-items-center pr-8 pl-8 pt-8 pb-4 ">
-                      <div className="">{project.title}</div>
-                      <div className="text-sm p-2 font-normal">
-                        {project.date}{' '}
+                    <div className={` ${!filter ? 'lg:hidden' : 'lg:block'}`}>
+                      <div className="flex flex-wrap justify-items-center pr-8 pl-8 pt-8 pb-4 lg:flex lg:justify-end lg:pr-16 lg:pb-8 lg:relative ">
+                        {project.title}
+                        <div className="text-sm p-2 font-normal ">
+                          {project.date}{' '}
+                        </div>
+                        {project.forWhomAndWhere && (
+                          <CustomPortableText
+                            paragraphClasses=""
+                            value={project.forWhomAndWhere}
+                          />
+                        )}
                       </div>
-                      {project.forWhomAndWhere && (
-                        <CustomPortableText
-                          paragraphClasses=""
-                          value={project.forWhomAndWhere}
-                        />
-                      )}
                     </div>
+
                     <div className="pl-8 pr-8 lg:hidden">
                       {' '}
                       {project.projectInfo && (
@@ -90,12 +95,14 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                       )}
                     </div>
 
-                    <div className="flex justify-center pb-32 pt-12">
+                    <div
+                      className="flex justify-center pb-32 pt-12 
+                    lg:flex lg:flex-col lg:justify-start lg:ml-8 lg:p-2"
+                    >
                       <div className={imageWidthClass}>
                         <ImageBox
                           image={project.coverImage}
                           alt={`Cover image from ${project.title}`}
-                          size={'70vw'}
                         />
                       </div>
                     </div>
