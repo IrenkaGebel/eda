@@ -106,13 +106,13 @@ export default defineType({
     }),
     defineField({
       name: 'gallery',
-      type: 'object',
       title: 'Gallery',
+      type: 'object',
       fields: [
         {
           name: 'images',
           type: 'array',
-          title: 'Images',
+          title: 'images',
           of: [
             {
               name: 'image',
@@ -122,7 +122,7 @@ export default defineType({
                 {
                   name: 'alt',
                   type: 'string',
-                  title: 'Alternative text',
+                  title: 'Alt text',
                 },
               ],
             },

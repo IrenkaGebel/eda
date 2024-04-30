@@ -14,6 +14,7 @@ export const homePageQuery = groq`
       projectInfo,
       additionalInfo,
       isItIszSzi,
+      coverImage,
     },
     title,
   }
@@ -59,9 +60,8 @@ export const sketchesBySlugQuery = groq`*[_type == "sketches" && slug.current ==
     linkImage,
     sketchesInfo,
     coverImage,
-    gallery   
-  }
-`
+    gallery,
+    }`
 
 export const ABOUT_QUERY = groq`*[_type == "about"][0]{
   _id,

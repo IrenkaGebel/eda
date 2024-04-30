@@ -134,7 +134,7 @@ export interface SketchesPayload {
   linkImage: Image
   sketchesInfo?: PortableTextBlock[]
   coverImage?: Image
-  gallery: Image
+  gallery: object
 }
 
 export interface SettingsPayload {
