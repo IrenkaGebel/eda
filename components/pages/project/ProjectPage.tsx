@@ -27,16 +27,18 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
   } = data ?? {}
 
   return (
-    <div className="text-xl font-light italic">
-      <div className="flex flex-col justify-items-center pt-8 pr-8 pl-8 pb-16">
-        {title}
-        {date}
+    <div className="text-3xl font-light ">
+      <div className="flex flex-wrap justify-items-center pt-16 pr-8 pl-8 pb-4 lg:pl-16 lg:pr-16">
+        <h1 className="italic">{title}</h1>
+        <h2 className="text-sm p-2 font-normal">{date}</h2>
         {forWhomAndWhere && (
           <CustomPortableText paragraphClasses="" value={forWhomAndWhere} />
         )}
         {projectInfo && (
           <CustomPortableText paragraphClasses="" value={projectInfo} />
         )}
+      </div>
+      <div className="p-8 lg:pt-0 lg:pl-16 lg:pr-16 pb-32">
         {additionalInfo && (
           <CustomPortableText paragraphClasses="" value={additionalInfo} />
         )}
@@ -56,18 +58,19 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
               image={linkImage}
               alt=""
               classesWrapper=" "
-              width="120"
+              width="144"
             />
           </Link>
         )}
       </div>
-      <div className="pt-16 pb-8 pr-4 pl-4 flex justify-center ">
+      <div className="pt-32 pb-8 pr-4 pl-4 flex justify-center ">
         {/* cover image */}
         <ImageBox
           data-sanity={encodeDataAttribute?.('coverImage')}
           image={coverImage}
           alt=""
           classesWrapper=" "
+          width="560"
         />
       </div>
       <div className="pt-16 pb-8 pr-4 pl-4"> {/* gallery */}</div>

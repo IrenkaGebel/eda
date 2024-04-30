@@ -13,15 +13,15 @@ export function About({ data }: AboutPageProps) {
 
   return (
     <>
-      <div className="flex flex-col gap-y-28 ">
+      <div className="flex flex-col gap-y-28 lg:snap-y lg:snap-mandatory lg:overflow-y-scroll">
         <article
           id="Eda"
-          className="p-4 lg:flex lg:flex-row  lg:gap-x-14 lg:justify-center"
+          className="p-4 lg:flex lg:flex-row  lg:gap-x-14 lg:justify-center lg:h-screen lg:x-screen lg:snap-always lg:snap-start "
         >
           {edaGroup && (
             <>
-              <section className="lg:w-1/3">
-                <div className="mt-8 mb-8 text-volcano-dust flex gap-8 items-baseline">
+              <section className="lg:w-1/3 ">
+                <div className="mt-8 mb-8 text-volcano-dust flex gap-8 items-baseline ">
                   <h1 className="text-6xl">{edaGroup.headingEda}</h1>
                   <h2 className="">{edaGroup.headingCaption}</h2>
                 </div>
@@ -53,12 +53,12 @@ export function About({ data }: AboutPageProps) {
 
         <article
           id="Iszszi"
-          className="p-4 lg:flex lg:flex-row lg:gap-x-14 lg:justify-center "
+          className="p-4 lg:flex lg:flex-row lg:gap-x-14 lg:justify-center lg:h-screen lg:x-screen lg:pt-24 lg:snap-always lg:snap-start"
         >
           {iszsziGroup && (
             <>
-              <section className="lg:w-1/3">
-                <h1 className="text-6xl text-volcano-dust mt-8 mb-8 ">
+              <section className="lg:w-1/3 lg:ml-8">
+                <h1 className="mt-8 mb-8 text-6xl text-volcano-dust  ">
                   {iszsziGroup.headingIszszi}
                 </h1>
 
@@ -67,7 +67,7 @@ export function About({ data }: AboutPageProps) {
                 />
               </section>
 
-              <section className="pb-32 lg:pt-4 ">
+              <section className="pb-32 lg:pt-4 lg:w-1/3">
                 <h1 className="text-5xl text-volcano-dust mt-8 mb-8 ">
                   {iszsziGroup.headingContactIszszi}
                 </h1>
@@ -76,7 +76,7 @@ export function About({ data }: AboutPageProps) {
                   value={iszsziGroup.contactIszszi as PortableTextBlock[]}
                 />
 
-                <h1 className="text-5xl text-volcano-dust mt-8 mb-8">
+                <h1 className="text-5xl text-volcano-dust mt-8 mb-8  ">
                   {iszsziGroup.headingWorkIszszi}
                 </h1>
 

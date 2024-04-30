@@ -43,14 +43,14 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
               const isItIszSzi = project.isItIszSzi === true
 
               const imageWidthClass = clsx({
-                'w-96':
+                'w-11/12':
                   (filter === 'project' && by === null && isProject) ||
                   (filter === 'project' &&
                     by === 'isz-szi-studio' &&
                     isProject &&
                     isItIszSzi) ||
                   (filter === 'sketches' && isSketches),
-                'w-44':
+                'w-4/12':
                   (filter === 'project' && by === null && !isProject) ||
                   (filter === 'project' &&
                     by === 'isz-szi-studio' &&
@@ -72,7 +72,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                   <div className="text-3xl font-light ">
                     <div className={` ${!filter ? 'lg:hidden' : 'lg:block'}`}>
                       <div className="flex flex-wrap justify-items-center pr-8 pl-8 pt-8 pb-4 lg:flex lg:justify-end lg:pr-16 lg:pb-8 lg:relative ">
-                        {project.title}
+                        <h1 className="italic">{project.title}</h1>
                         <div className="text-sm p-2 font-normal ">
                           {project.date}{' '}
                         </div>

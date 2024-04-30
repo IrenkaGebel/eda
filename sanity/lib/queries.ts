@@ -51,6 +51,7 @@ export const projectBySlugQuery = groq`
 export const sketchesBySlugQuery = groq`*[_type == "sketches" && slug.current == $slug][0] {
     _id,
     title,
+    date,
     "slug": slug.current,
     referenceToProject->{
       slug

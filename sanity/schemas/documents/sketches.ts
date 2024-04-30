@@ -24,6 +24,11 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'date',
+      title: 'Date',
+      type: 'string',
+    }),
+    defineField({
       name: 'referenceToProject',
       title: 'Reference to Project',
       type: 'reference',

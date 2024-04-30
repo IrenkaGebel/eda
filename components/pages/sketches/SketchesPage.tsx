@@ -15,6 +15,7 @@ export function SketchesPage({ data, encodeDataAttribute }: SketchesPageProps) {
   // Default to an empty object to allow previews on non-existent documents
   const {
     title,
+    date,
     sketchesInfo,
     coverImage,
     gallery,
@@ -23,10 +24,10 @@ export function SketchesPage({ data, encodeDataAttribute }: SketchesPageProps) {
   } = data ?? {}
 
   return (
-    <div className="text-xl font-light italic">
-      <div className="flex flex-col justify-items-center gap-4 pt-8 pr-8 pl-8 pb-16">
-        {title}
-
+    <div className="text-3xl font-light ">
+      <div className="flex flex-wrap justify-items-center pt-16 pr-8 pl-8 pb-32 lg:pl-16 lg:pr-16 gap-2">
+        <h1 className="italic">{title}</h1>
+        <h2 className="text-sm p-2 font-normal">{date}</h2>
         {sketchesInfo && (
           <CustomPortableText paragraphClasses="" value={sketchesInfo} />
         )}
@@ -50,7 +51,7 @@ export function SketchesPage({ data, encodeDataAttribute }: SketchesPageProps) {
           </Link>
         )}
       </div>
-      <div className="pt-16 pr-4 pl-4 pb-8">
+      <div className="pt-32 pr-4 pl-4 pb-8 flex justify-center">
         {' '}
         {/* cover image */}
         <ImageBox
@@ -58,6 +59,7 @@ export function SketchesPage({ data, encodeDataAttribute }: SketchesPageProps) {
           image={coverImage}
           alt=""
           classesWrapper=" "
+          width="560"
         />
       </div>
       <div className="pt-8 pr-4 pl-4 pb-16">

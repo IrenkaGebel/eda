@@ -72,11 +72,22 @@ export default defineType({
       title: 'project Info',
       type: 'array',
       of: [
-        // Paragraphs
         defineArrayMember({
-          lists: [],
           marks: {
-            annotations: [],
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Link',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'Url',
+                  },
+                ],
+              },
+            ],
             decorators: [
               {
                 title: 'Italic',
@@ -85,6 +96,10 @@ export default defineType({
               {
                 title: 'Strong',
                 value: 'strong',
+              },
+              {
+                title: 'Underline',
+                value: 'underline',
               },
             ],
           },
@@ -98,11 +113,22 @@ export default defineType({
       title: 'additional Info',
       type: 'array',
       of: [
-        // Paragraphs
         defineArrayMember({
-          lists: [],
           marks: {
-            annotations: [],
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Link',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'Url',
+                  },
+                ],
+              },
+            ],
             decorators: [
               {
                 title: 'Italic',
@@ -111,6 +137,10 @@ export default defineType({
               {
                 title: 'Strong',
                 value: 'strong',
+              },
+              {
+                title: 'Underline',
+                value: 'underline',
               },
             ],
           },

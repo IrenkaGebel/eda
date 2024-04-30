@@ -147,43 +147,38 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
               <CustomPortableText value={data.intro} />
             </article>
             <div className="">
-              <div className="lg:border lg:border-black lg:rotate-90 lg:pt-2  lg:border-l-0 lg:border-r-0 lg:border-slate-60 "></div>
+              {/* <div className="lg:border lg:border-black lg:rotate-90 lg:pt-2  lg:border-l-0 lg:border-r-0 lg:border-slate-60 "></div> */}
             </div>
-            <div className="lg:flex lg:flex-col lg:items-center lg:gap-36">
+            <div className="lg:flex lg:flex-col lg:items-center lg:gap-8 ">
               {data.parts && (
                 <>
-                  <div className="lg:pr-96">
-                    {renderSection(
-                      'part1',
-                      data.parts.headingOne,
-                      data.parts.wordCountOne,
-                      data.parts.contentOne,
-                    )}
-                  </div>
-                  <div className="lg:pl-96 lg:pt-36">
-                    {renderSection(
-                      'part2',
-                      data.parts.headingTwo,
-                      data.parts.wordCountTwo,
-                      data.parts.contentTwo,
-                    )}
-                  </div>
-                  <div className="lg:pr-96 lg:pt-96">
-                    {renderSection(
-                      'part3',
-                      data.parts.headingThree,
-                      data.parts.wordCountThree,
-                      data.parts.contentThree,
-                    )}
-                  </div>
-                  <div className="lg:pl-96 lg:pt-72">
-                    {renderSection(
-                      'part4',
-                      data.parts.headingFour,
-                      data.parts.wordCountFour,
-                      data.parts.contentFour,
-                    )}
-                  </div>
+                  {renderSection(
+                    'part1',
+                    data.parts.headingOne,
+                    data.parts.wordCountOne,
+                    data.parts.contentOne,
+                  )}
+
+                  {renderSection(
+                    'part2',
+                    data.parts.headingTwo,
+                    data.parts.wordCountTwo,
+                    data.parts.contentTwo,
+                  )}
+
+                  {renderSection(
+                    'part3',
+                    data.parts.headingThree,
+                    data.parts.wordCountThree,
+                    data.parts.contentThree,
+                  )}
+
+                  {renderSection(
+                    'part4',
+                    data.parts.headingFour,
+                    data.parts.wordCountFour,
+                    data.parts.contentFour,
+                  )}
                 </>
               )}
             </div>

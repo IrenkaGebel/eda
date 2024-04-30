@@ -24,7 +24,7 @@ export default function Filterbar() {
   return (
     <>
       <div
-        className="flex gap-6 justify-center items-center bg-butter-bun bottom-0 fixed text-volcano-dust font-regular w-full text-sm 
+        className="z-50 flex gap-6 justify-center items-center bg-butter-bun bottom-0 fixed text-volcano-dust font-regular w-full text-sm 
       lg:pt-2 lg:pb-2 lg:pl-3.5 lg:flex lg:justify-start lg:text-4xl lg:bottom-4 lg:left-4 lg:max-w-fit"
       >
         {!activeFilter && (

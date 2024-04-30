@@ -82,14 +82,6 @@ export interface showcaseProjects {
   isItIszSzi: boolean
 }
 
-// export interface showcaseSketches {
-//   _type: string
-//   coverImage?: Image
-//   slug?: string
-//   title?: string
-//   sketchesInfo: PortableTextBlock[]
-// }
-
 export interface HomePagePayload {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
@@ -133,6 +125,7 @@ export interface ProjectPayload {
 export interface SketchesPayload {
   title: string
   slug?: string
+  date: string
   referenceToProject?: {
     slug: {
       current: string
