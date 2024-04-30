@@ -13,10 +13,10 @@ export function About({ data }: AboutPageProps) {
 
   return (
     <>
-      <div className="flex flex-col gap-y-28 lg:snap-y lg:snap-mandatory lg:overflow-y-scroll">
+      <div className=" flex flex-col snap-y snap-mandatory overflow-y-scroll h-dvh lg:gap-64">
         <article
           id="Eda"
-          className="p-4 lg:flex lg:flex-row  lg:gap-x-14 lg:justify-center lg:h-screen lg:x-screen lg:snap-always lg:snap-start "
+          className="pl-4 pr-4 mb-16 lg:mb-0 lg:flex lg:flex-row  lg:gap-x-14 lg:justify-center h-dvh lg:pt-32 snap-always snap-start "
         >
           {edaGroup && (
             <>
@@ -53,7 +53,7 @@ export function About({ data }: AboutPageProps) {
 
         <article
           id="Iszszi"
-          className="p-4 lg:flex lg:flex-row lg:gap-x-14 lg:justify-center lg:h-screen lg:x-screen lg:pt-24 lg:snap-always lg:snap-start"
+          className="pl-4 lg:pl-12 pr-4 md:mb-32 lg:flex lg:flex-row lg:gap-x-14 lg:justify-center lg:h-dvh lg:mb-64 snap-always snap-start"
         >
           {iszsziGroup && (
             <>
