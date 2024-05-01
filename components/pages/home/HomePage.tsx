@@ -26,6 +26,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
   // Default to an empty object to allow previews on non-existent documents
 
   const { showcaseProjects } = data ?? {}
+  console.log(filter)
 
   return (
     <>
@@ -70,7 +71,10 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                   ])}
                 >
                   <div className="text-3xl font-light ">
-                    <div className={` ${!filter ? 'lg:hidden' : 'lg:block'}`}>
+                    {/* pokaz tylko dla aktywnego filtru */}
+                    <div
+                      className={` ${filter && filter === project._type ? 'lg:block' : 'lg:hidden'}`}
+                    >
                       <div className="flex flex-wrap justify-items-center pr-8 pl-8 pt-8 pb-4 lg:flex  lg:justify-end lg:pr-32 lg:pb-0 lg:pt-0  lg:absolute lg:right-0 lg:w-2/3">
                         <h1 className="italic">{project.title}</h1>
                         <div className="text-sm p-2 font-normal ">

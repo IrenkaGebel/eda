@@ -150,6 +150,32 @@ export default defineType({
       ],
     }),
     defineField({
+      name: 'gallery',
+      title: 'Gallery',
+      type: 'object',
+      fields: [
+        {
+          name: 'images',
+          type: 'array',
+          title: 'images',
+          of: [
+            {
+              name: 'image',
+              type: 'image',
+              title: 'Image',
+              fields: [
+                {
+                  name: 'alt',
+                  type: 'string',
+                  title: 'Alt text',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
       type: 'image',
       icon: ImageIcon,
       name: 'coverImage',

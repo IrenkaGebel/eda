@@ -23,6 +23,8 @@ export function SketchesPage({ data, encodeDataAttribute }: SketchesPageProps) {
     linkImage,
   } = data ?? {}
 
+  // console.log('coverImage:', coverImage)
+
   return (
     <div className="text-3xl font-light ">
       <div className="flex flex-wrap justify-items-center pt-16 pr-8 pl-8 pb-32 lg:pl-16 lg:pr-16 gap-2">
@@ -46,7 +48,7 @@ export function SketchesPage({ data, encodeDataAttribute }: SketchesPageProps) {
               image={linkImage}
               alt=""
               classesWrapper=" "
-              width="144"
+              width={144}
             />
           </Link>
         )}
@@ -59,18 +61,33 @@ export function SketchesPage({ data, encodeDataAttribute }: SketchesPageProps) {
           image={coverImage}
           alt=""
           classesWrapper=" "
-          width="560"
+          width={560}
         />
       </div>
       <div className="pt-8 pr-4 pl-4 pb-16">
-        {' '}
+        {gallery?.images &&
+          gallery.images.map((img) => {
+            return (
+              <div key={img._key}>
+                <ImageBox
+                  data-sanity={encodeDataAttribute?.('gallery')}
+                  image={img}
+                  alt=""
+                  classesWrapper=""
+                  width={1000}
+                  size="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 40vw"
+                />
+              </div>
+            )
+          })}
+
         {/* gallery */}
-        <ImageBox
+        {/* <ImageBox
           data-sanity={encodeDataAttribute?.('gallery')}
           image={gallery}
           alt=""
           classesWrapper=" "
-        />
+        /> */}
       </div>
     </div>
   )

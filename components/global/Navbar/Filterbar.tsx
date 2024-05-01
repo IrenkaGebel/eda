@@ -1,30 +1,40 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 export default function Filterbar() {
-  const [showFilters, setShowFilters] = useState(true)
-  const [activeFilter, setActiveFilter] = useState(null)
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  const filter = searchParams.get('filter')
+  const by = searchParams.get('by')
+  const setFilterValue = by ? by : filter
+  const formattedSetFilterValue = setFilterValue?.replace(/-/g, ' ')
+
+  const [showFilters, setShowFilters] = useState(!filter)
+  const [activeFilter, setActiveFilter] = useState(formattedSetFilterValue)
+
+  // console.log('active filter:', setFilterValue)
 
   const toggleFilters = () => {
     setShowFilters(!showFilters)
   }
 
-  const handleFilterClick = (string) => {
-    setActiveFilter(string)
-    setShowFilters(!showFilters)
-  }
+  useEffect(() => {
+    setShowFilters(!filter)
+    setActiveFilter(formattedSetFilterValue)
+  }, [filter, formattedSetFilterValue])
 
   const resetFilters = () => {
-    setActiveFilter(null)
+    setActiveFilter(undefined)
     setShowFilters(true)
   }
 
   return (
     <>
       <div
-        className="z-50 flex gap-6 justify-center items-center bg-butter-bun bottom-0 fixed text-volcano-dust font-regular w-full text-sm 
+        className="z-50 hidden lg:block flex gap-6 justify-center items-center bg-butter-bun bottom-0 fixed text-volcano-dust font-regular w-full text-sm 
       lg:pt-2 lg:pb-2 lg:pl-3.5 lg:flex lg:justify-start lg:text-4xl lg:bottom-4 lg:left-4 lg:max-w-fit"
       >
         {!activeFilter && (
@@ -35,7 +45,7 @@ export default function Filterbar() {
             {'VIEW'}
           </button>
         )}
-        {activeFilter && <div className="p-2">{activeFilter}</div>}
+        {activeFilter && <div className="p-2 uppercase">{activeFilter}</div>}
         {activeFilter && (
           <div className="lg:p-1 lg:pr-6">
             <Link href={'/'} onClick={resetFilters}>
@@ -47,26 +57,13 @@ export default function Filterbar() {
         {showFilters && (
           <>
             <div className="p-2 lg:p-0">
-              <Link
-                href={'/?filter=project'}
-                onClick={() => handleFilterClick('PROJECTS')}
-              >
-                PROJECTS
-              </Link>
+              <Link href={'/?filter=project'}>PROJECTS</Link>
             </div>
             <div className="p=2 lg:p-0">
-              <Link
-                href={'/?filter=sketches'}
-                onClick={() => handleFilterClick('SKETCHES')}
-              >
-                SKETCHES
-              </Link>
+              <Link href={'/?filter=sketches'}>SKETCHES</Link>
             </div>
             <div className="p-2 lg:p-0 lg:pr-4">
-              <Link
-                href={'/?filter=project&by=isz-szi-studio'}
-                onClick={() => handleFilterClick('ISZ SZI STUDIO')}
-              >
+              <Link href={'/?filter=project&by=isz-szi-studio'}>
                 ISZ SZI STUDIO
               </Link>
             </div>
