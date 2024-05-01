@@ -47,7 +47,7 @@ export default function Filterbar() {
         )}
         {activeFilter && <div className="p-2 uppercase">{activeFilter}</div>}
         {activeFilter && (
-          <div className="lg:p-1 lg:pr-6">
+          <div className="lg:p-2 lg:pr-6">
             <Link href={'/'} onClick={resetFilters}>
               –
             </Link>
