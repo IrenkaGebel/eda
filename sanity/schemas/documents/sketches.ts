@@ -91,11 +91,6 @@ export default defineType({
       },
       fields: [
         defineField({
-          title: 'Caption',
-          name: 'caption',
-          type: 'string',
-        }),
-        defineField({
           name: 'alt',
           type: 'string',
           title: 'Alt text',

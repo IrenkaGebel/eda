@@ -150,6 +150,30 @@ export default defineType({
       ],
     }),
     defineField({
+      type: 'image',
+      icon: ImageIcon,
+      name: 'coverImage',
+      title: 'cover image',
+      options: {
+        hotspot: true,
+      },
+      preview: {
+        select: {
+          imageUrl: 'asset.url',
+          title: 'caption',
+        },
+      },
+      fields: [
+        defineField({
+          name: 'alt',
+          type: 'string',
+          title: 'Alt text',
+          description:
+            'Alternative text for screenreaders. Falls back on caption if not set',
+        }),
+      ],
+    }),
+    defineField({
       name: 'gallery',
       title: 'Gallery',
       type: 'object',
@@ -175,36 +199,6 @@ export default defineType({
         },
       ],
     }),
-    defineField({
-      type: 'image',
-      icon: ImageIcon,
-      name: 'coverImage',
-      title: 'cover image',
-      options: {
-        hotspot: true,
-      },
-      preview: {
-        select: {
-          imageUrl: 'asset.url',
-          title: 'caption',
-        },
-      },
-      fields: [
-        defineField({
-          title: 'Caption',
-          name: 'caption',
-          type: 'string',
-        }),
-        defineField({
-          name: 'alt',
-          type: 'string',
-          title: 'Alt text',
-          description:
-            'Alternative text for screenreaders. Falls back on caption if not set',
-        }),
-      ],
-    }),
-
     defineField({
       name: 'linkImage',
       title: 'Link Image',

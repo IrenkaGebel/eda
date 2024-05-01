@@ -58,22 +58,41 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
               image={linkImage}
               alt=""
               classesWrapper=" "
-              width="144"
+              width={144}
+              size="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 40vw"
             />
           </Link>
         )}
       </div>
-      <div className="pt-32 pb-8 pr-4 pl-4 flex justify-center ">
-        {/* cover image */}
+      {/* cover image */}
+      <div className="pt-32 pb-16 flex justify-center ">
         <ImageBox
           data-sanity={encodeDataAttribute?.('coverImage')}
           image={coverImage}
           alt=""
           classesWrapper=" "
-          width="560"
+          width={560}
+          size="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 40vw"
         />
       </div>
-      <div className="pt-16 pb-8 pr-4 pl-4"> {/* gallery */}</div>
+      {/* gallery */}
+      <div className="flex flex-col items-center gap-16 pb-16">
+        {gallery?.images &&
+          gallery.images.map((img) => {
+            return (
+              <div key={img._key}>
+                <ImageBox
+                  data-sanity={encodeDataAttribute?.('gallery')}
+                  image={img}
+                  alt=""
+                  classesWrapper=""
+                  width={560}
+                  size="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 40vw"
+                />
+              </div>
+            )
+          })}
+      </div>
     </div>
   )
 }

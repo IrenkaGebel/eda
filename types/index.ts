@@ -112,7 +112,7 @@ export interface ProjectPayload {
   projectInfo?: PortableTextBlock[]
   additionalInfo: PortableTextBlock
   coverImage?: Image
-  gallery?: object
+  gallery: { images: [ImageInGallery] }
 }
 
 // interface referenceToSketchesObject {
@@ -136,6 +136,7 @@ export interface SketchesPayload {
   coverImage?: Image
   gallery: { images: [ImageInGallery] }
 }
+
 interface ImageInGallery {
   asset?: any
   _key: string

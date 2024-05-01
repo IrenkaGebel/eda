@@ -49,22 +49,24 @@ export function SketchesPage({ data, encodeDataAttribute }: SketchesPageProps) {
               alt=""
               classesWrapper=" "
               width={144}
+              size="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 40vw"
             />
           </Link>
         )}
       </div>
-      <div className="pt-32 pr-4 pl-4 pb-8 flex justify-center">
-        {' '}
-        {/* cover image */}
+      {/* cover image */}
+      <div className="pt-32 pr-4 pl-4 pb-16 flex justify-center">
         <ImageBox
           data-sanity={encodeDataAttribute?.('coverImage')}
           image={coverImage}
           alt=""
           classesWrapper=" "
           width={560}
+          size="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 40vw"
         />
       </div>
-      <div className="pt-8 pr-4 pl-4 pb-16">
+      {/* gallery */}
+      <div className="flex flex-col items-center gap-16 pb-16">
         {gallery?.images &&
           gallery.images.map((img) => {
             return (
@@ -74,20 +76,12 @@ export function SketchesPage({ data, encodeDataAttribute }: SketchesPageProps) {
                   image={img}
                   alt=""
                   classesWrapper=""
-                  width={1000}
+                  width={560}
                   size="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 40vw"
                 />
               </div>
             )
           })}
-
-        {/* gallery */}
-        {/* <ImageBox
-          data-sanity={encodeDataAttribute?.('gallery')}
-          image={gallery}
-          alt=""
-          classesWrapper=" "
-        /> */}
       </div>
     </div>
   )

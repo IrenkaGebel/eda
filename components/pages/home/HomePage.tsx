@@ -107,6 +107,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                         <ImageBox
                           image={project.coverImage}
                           alt={`Cover image from ${project.title}`}
+                          size="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 40vw"
                         />
                       </div>
                     </div>
