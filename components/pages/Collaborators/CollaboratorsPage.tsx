@@ -1,99 +1,3 @@
-// 'use client'
-// import { EncodeDataAttributeCallback } from '@sanity/react-loader'
-// import React, { useState } from 'react'
-
-// import { CustomPortableText } from '@/components/shared/CustomPortableText'
-// import { CollaboratorsPayload } from '@/types'
-
-// export interface CollaboratorsPageProps {
-//   data: CollaboratorsPayload | null
-//   encodeDataAttribute?: EncodeDataAttributeCallback
-// }
-
-// export function Collaborators({ data }: CollaboratorsPageProps) {
-//   const [showSection, setShowSection] = useState(false)
-//   const { intro, parts } = data ?? {}
-//   const toggleSection = () => {
-//     setShowSection(!showSection)
-//   }
-//   return (
-//     <>
-//       {/* intro */}
-//       <div className="p-8">
-//         <article className="text-5xl font-light italic pt-4 pb-16 ">
-//           <CustomPortableText value={intro} />
-//         </article>
-
-//         {parts && (
-//           <>
-//             {/* part 1 */}
-
-//             <div className="flex flex-row justify-between border border-black">
-//               <button className="p-4" onClick={toggleSection}>
-//                 {parts.headingOne}
-//               </button>
-//               <h2 className="p-4 text-slate-600"> {parts.wordCountOne}</h2>
-//             </div>
-//             {showSection && (
-//               <section className="p-4 text-justify">
-//                 <CustomPortableText
-//                   paragraphClasses=""
-//                   value={parts.contentOne}
-//                 />
-//               </section>
-//             )}
-//             {/* part 2 */}
-//             <div className="flex flex-row justify-between border border-black">
-//               <button className="p-4" onClick={toggleSection}>
-//                 {parts.headingTwo}
-//               </button>
-//               <h2 className="p-4 text-slate-600"> {parts.wordCountTwo}</h2>
-//             </div>
-//             {showSection && (
-//               <section className="p-4 text-justify">
-//                 <CustomPortableText
-//                   paragraphClasses=""
-//                   value={parts.contentTwo}
-//                 />
-//               </section>
-//             )}
-//             {/* part 3 */}
-//             <div className="flex flex-row justify-between border border-black">
-//               <button className="p-4" onClick={toggleSection}>
-//                 {parts.headingThree}
-//               </button>
-//               <h2 className="p-4 text-slate-600"> {parts.wordCountThree}</h2>
-//             </div>
-//             {showSection && (
-//               <section className="p-4 text-justify">
-//                 <CustomPortableText
-//                   paragraphClasses=""
-//                   value={parts.contentThree}
-//                 />
-//               </section>
-//             )}
-//             {/* part 4 */}
-//             <div className="flex flex-row justify-between border border-black">
-//               <button className="p-4" onClick={toggleSection}>
-//                 {parts.headingFour}
-//               </button>
-//               <h2 className="p-4 text-slate-600"> {parts.wordCountFour}</h2>
-//             </div>
-//             {showSection && (
-//               <section className="p-4 text-justify">
-//                 <CustomPortableText
-//                   paragraphClasses=""
-//                   value={parts.contentFour}
-//                 />
-//               </section>
-//             )}
-//           </>
-//         )}
-//       </div>
-//     </>
-//   )
-// }
-// export default Collaborators
 'use client'
 import React, { useState } from 'react'
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
@@ -122,15 +26,16 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
     content: any,
   ) => (
     <>
-      <div className="p-4 mt-6 mb-6 max-w-180">
-        <div className="flex flex-row justify-between border border-black lg:w-80 ">
-          <button className="p-4 " onClick={() => toggleSection(sectionId)}>
-            {heading}
-          </button>
+      <div className="p-4 lg:w-5/12">
+        <div
+          className=" border border-black flex flex-row justify-between"
+          onClick={() => toggleSection(sectionId)}
+        >
+          <button className="p-4">{heading}</button>
           <h2 className="p-4 text-slate-600"> {wordCount}</h2>
         </div>
         {showSections[sectionId] && (
-          <section className="p-4 text-justify lg:max-w-80">
+          <section className="p-4 text-justify ">
             <CustomPortableText value={content} />
           </section>
         )}
@@ -140,16 +45,16 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
 
   return (
     <>
-      <div className="p-8 lg:mb-36 lg:p-0 lg:place-content-center">
+      <div className="p-8 lg:mb-36 lg:p-0 place-items-center">
         {data && (
           <>
-            <article className="z-40 text-5xl font-light italic pt-4 pb-16 lg:ml-12 lg:mr-12 lg:text-4xl">
+            <article className="z-40 text-5xl font-light italic pt-4 pb-16 lg:ml-12 lg:mr-12 lg:text-4xl ">
               <CustomPortableText value={data.intro} />
             </article>
             <div className="">
               {/* <div className="lg:border lg:border-black lg:rotate-90 lg:pt-2  lg:border-l-0 lg:border-r-0 lg:border-slate-60 "></div> */}
             </div>
-            <div className="lg:flex lg:flex-col lg:items-center lg:gap-8 ">
+            <div className="lg:flex lg:flex-col items-center lg:gap-4 ">
               {data.parts && (
                 <>
                   {renderSection(
