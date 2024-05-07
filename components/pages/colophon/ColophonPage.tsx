@@ -1,8 +1,8 @@
 import React from 'react'
-
-import { ColophonPayload } from '@/types'
-import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import { PortableTextBlock } from 'sanity'
+
+import { CustomPortableText } from '@/components/shared/CustomPortableText'
+import { ColophonPayload } from '@/types'
 
 export interface ColophonPageProps {
   data: ColophonPayload | null
@@ -14,10 +14,7 @@ export function Colophon({ data }: ColophonPageProps) {
   return (
     <>
       <div className="text-coral-sweets p-4 h-dvh text-right flex flex-col justify-evenly">
-        <div className=" ">
-          {' '}
-          <CustomPortableText value={info as PortableTextBlock[]} />
-        </div>
+        <div className=" ">{info && <CustomPortableText value={info} />}</div>
         <div>
           <p>{revision}</p>
         </div>

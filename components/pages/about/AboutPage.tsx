@@ -26,9 +26,7 @@ export function About({ data }: AboutPageProps) {
                   <h1 className="text-6xl">{edaGroup.headingEda}</h1>
                   <h2 className="">{edaGroup.headingCaption}</h2>
                 </div>
-                <CustomPortableText
-                  value={edaGroup.bioEda as PortableTextBlock[]}
-                />
+                <CustomPortableText value={edaGroup.bioEda} />
               </section>
 
               <section className="lg:pt-4 lg:w-1/3">
@@ -36,17 +34,13 @@ export function About({ data }: AboutPageProps) {
                   {edaGroup.headingContact}
                 </h1>
 
-                <CustomPortableText
-                  value={edaGroup.contactEda as PortableTextBlock[]}
-                />
+                <CustomPortableText value={edaGroup.contactEda} />
 
                 <h1 className="mt-8 mb-8 text-volcano-dust text-5xl">
                   {edaGroup.headingWork}
                 </h1>
 
-                <CustomPortableText
-                  value={edaGroup.workEda as PortableTextBlock[]}
-                />
+                <CustomPortableText value={edaGroup.workEda} />
               </section>
             </>
           )}
@@ -68,9 +62,7 @@ export function About({ data }: AboutPageProps) {
                   {iszsziGroup.headingIszszi}
                 </h1>
 
-                <CustomPortableText
-                  value={iszsziGroup.bioIszszi as PortableTextBlock[]}
-                />
+                <CustomPortableText value={iszsziGroup.bioIszszi} />
               </section>
 
               <section className="pb-24 lg:pt-4 lg:w-1/3">
@@ -78,17 +70,13 @@ export function About({ data }: AboutPageProps) {
                   {iszsziGroup.headingContactIszszi}
                 </h1>
 
-                <CustomPortableText
-                  value={iszsziGroup.contactIszszi as PortableTextBlock[]}
-                />
+                <CustomPortableText value={iszsziGroup.contactIszszi} />
 
                 <h1 className="text-5xl text-volcano-dust mt-8 mb-8  ">
                   {iszsziGroup.headingWorkIszszi}
                 </h1>
 
-                <CustomPortableText
-                  value={iszsziGroup.workIszszi as PortableTextBlock[]}
-                />
+                <CustomPortableText value={iszsziGroup.workIszszi} />
               </section>
             </>
           )}

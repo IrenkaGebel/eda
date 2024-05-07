@@ -77,22 +77,20 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                         <div className="text-sm p-2 font-normal ">
                           {project.date}{' '}
                         </div>
-                        {project.forWhomAndWhere && (
-                          <CustomPortableText
-                            paragraphClasses=""
-                            value={project.forWhomAndWhere}
-                          />
-                        )}
+
+                        <div>
+                          {project.forWhomAndWhere && (
+                            <CustomPortableText
+                              value={project.forWhomAndWhere}
+                            />
+                          )}
+                        </div>
                       </div>
                     </div>
 
                     <div className="pl-8 pr-8 not-sr-only lg:sr-only">
-                      {' '}
                       {project.projectInfo && (
-                        <CustomPortableText
-                          paragraphClasses=""
-                          value={project.projectInfo}
-                        />
+                        <CustomPortableText value={project.projectInfo} />
                       )}
                     </div>
 
