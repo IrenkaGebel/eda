@@ -54,9 +54,7 @@ export function Collaborators({ data }: CollaboratorsPageProps) {
             <article className="z-40 text-5xl font-light italic pt-4 pb-16 lg:ml-12 lg:mr-12 lg:text-4xl ">
               <CustomPortableText value={data.intro} />
             </article>
-            <div className="">
-              {/* <div className="lg:border lg:border-black lg:rotate-90 lg:pt-2  lg:border-l-0 lg:border-r-0 lg:border-slate-60 "></div> */}
-            </div>
+            <div className=""></div>
             <div className="lg:flex lg:flex-col items-center lg:gap-4 ">
               {data.parts && (
                 <>
