@@ -1,9 +1,9 @@
+import Link from 'next/link'
 import React from 'react'
 import { PortableTextBlock } from 'sanity'
 
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import type { AboutPayload } from '@/types'
-import Link from 'next/link'
 
 export interface AboutPageProps {
   data: AboutPayload | null

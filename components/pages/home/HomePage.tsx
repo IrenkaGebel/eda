@@ -9,6 +9,7 @@ import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import ImageBox from '@/components/shared/ImageBox'
 import { resolveHref } from '@/sanity/lib/utils'
 import type { HomePagePayload } from '@/types'
+import { projectBySlugQuery } from '@/sanity/lib/queries'
 
 export interface HomePageProps {
   data: HomePagePayload | null

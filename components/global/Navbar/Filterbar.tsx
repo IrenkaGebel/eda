@@ -15,7 +15,6 @@ export default function Filterbar() {
   const [showFilters, setShowFilters] = useState(!filter)
   const [activeFilter, setActiveFilter] = useState(formattedSetFilterValue)
 
-  // console.log('active filter:', setFilterValue)
 
   const toggleFilters = () => {
     setShowFilters(!showFilters)
