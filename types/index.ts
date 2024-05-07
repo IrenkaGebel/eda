@@ -75,7 +75,7 @@ export interface showcaseProjects {
   coverImage?: Image
   slug?: string
   title?: string
-  forWhomAndWhere: PortableTextBlock
+  forWhomAndWhere: PortableTextBlock[]
   date: string
   projectInfo: PortableTextBlock[]
   additionalInfo: PortableTextBlock
