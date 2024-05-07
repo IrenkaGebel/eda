@@ -6,11 +6,9 @@ import Link from 'next/link'
 import { usePathname, useSearchParams } from 'next/navigation'
 
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
+import ImageBox from '@/components/shared/ImageBox'
 import { resolveHref } from '@/sanity/lib/utils'
 import type { HomePagePayload } from '@/types'
-
-import ImageBox from '@/components/shared/ImageBox'
-import sketches from '@/sanity/schemas/documents/sketches'
 
 export interface HomePageProps {
   data: HomePagePayload | null
@@ -30,7 +28,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
 
   return (
     <>
-      <div className="pb-32 max-w-fit">
+      <div className="pb-32 max-w-fit cursor-pointer">
         {/* Showcase projects */}{' '}
         {showcaseProjects && showcaseProjects.length > 0 && (
           <div className="">
