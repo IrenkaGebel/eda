@@ -1,4 +1,5 @@
 'use client'
+import { EncodeDataAttributeCallback } from '@sanity/react-loader'
 import React, { useState } from 'react'
 
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
@@ -6,6 +7,7 @@ import { CollaboratorsPayload } from '@/types'
 
 export interface CollaboratorsPageProps {
   data: CollaboratorsPayload | null
+  encodeDataAttribute?: EncodeDataAttributeCallback
 }
 
 export function Collaborators({ data }: CollaboratorsPageProps) {

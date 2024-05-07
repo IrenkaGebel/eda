@@ -24,7 +24,6 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
   // Default to an empty object to allow previews on non-existent documents
 
   const { showcaseProjects } = data ?? {}
-  console.log(filter)
 
   return (
     <>
