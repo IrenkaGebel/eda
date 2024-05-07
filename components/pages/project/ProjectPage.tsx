@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import ImageBox from '@/components/shared/ImageBox'
 import type { ProjectPayload } from '@/types'
-import { urlForImage } from '@/sanity/lib/utils'
 
 export interface ProjectPageProps {
   data: ProjectPayload | null

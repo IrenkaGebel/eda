@@ -99,7 +99,7 @@ export interface PagePayload {
 
 export interface ProjectPayload {
   title: string
-  forWhomAndWhere: PortableTextBlock
+  forWhomAndWhere: PortableTextBlock[]
   slug: string
   date: string
   isItIszSzi: boolean
@@ -110,7 +110,7 @@ export interface ProjectPayload {
   }
   linkImage: Image
   projectInfo?: PortableTextBlock[]
-  additionalInfo: PortableTextBlock
+  additionalInfo: PortableTextBlock[]
   coverImage?: Image
   gallery: { images: [ImageInGallery] }
 }
