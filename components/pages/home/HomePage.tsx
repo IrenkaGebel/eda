@@ -30,7 +30,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
 
   return (
     <>
-      <div className="pb-64">
+      <div className="pb-32 max-w-fit">
         {/* Showcase projects */}{' '}
         {showcaseProjects && showcaseProjects.length > 0 && (
           <div className="">
@@ -70,12 +70,12 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                     'slug',
                   ])}
                 >
-                  <div className="text-3xl font-light ">
+                  <div className="text-3xl font-light">
                     {/* pokaz tylko dla aktywnego filtru */}
                     <div
                       className={` ${filter && filter === project._type ? 'lg:block' : 'lg:hidden'}`}
                     >
-                      <div className="flex flex-wrap justify-items-center pr-8 pl-8 pt-8 pb-4 lg:flex  lg:justify-end lg:pr-32 lg:pb-0 lg:pt-0  lg:absolute lg:right-0 lg:w-2/3">
+                      <div className="flex flex-wrap justify-items-center pr-8 pl-8 pt-8 pb-4 lg:flex  lg:justify-end lg:pr-32 lg:pb-0 lg:pt-0  lg:absolute lg:right-0 lg:w-3/5">
                         <h1 className="italic">{project.title}</h1>
                         <div className="text-sm p-2 font-normal ">
                           {project.date}{' '}
@@ -89,7 +89,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                       </div>
                     </div>
 
-                    <div className="pl-8 pr-8 lg:hidden">
+                    <div className="pl-8 pr-8 not-sr-only lg:sr-only">
                       {' '}
                       {project.projectInfo && (
                         <CustomPortableText
@@ -101,7 +101,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
 
                     <div
                       className="flex justify-center pb-32 pt-12 
-                    lg:flex lg:flex-col lg:justify-start lg:ml-8 lg:p-2"
+                    lg:flex lg:flex-col lg:justify-start lg:ml-8 lg:p-2  "
                     >
                       <div className={imageWidthClass}>
                         <ImageBox

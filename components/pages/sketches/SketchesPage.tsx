@@ -55,7 +55,7 @@ export function SketchesPage({ data, encodeDataAttribute }: SketchesPageProps) {
         )}
       </div>
       {/* cover image */}
-      <div className="pt-32 pr-4 pl-4 pb-16 flex justify-center">
+      <div className="pt-32 pr-4 pl-4 pb-16 flex justify-center pr-4 pl-4">
         <ImageBox
           data-sanity={encodeDataAttribute?.('coverImage')}
           image={coverImage}
@@ -66,7 +66,7 @@ export function SketchesPage({ data, encodeDataAttribute }: SketchesPageProps) {
         />
       </div>
       {/* gallery */}
-      <div className="flex flex-col items-center gap-16 pb-16">
+      <div className="flex flex-col items-center gap-16 pb-16 pr-4 pl-4">
         {gallery?.images &&
           gallery.images.map((img) => {
             return (
