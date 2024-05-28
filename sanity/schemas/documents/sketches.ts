@@ -25,7 +25,7 @@ export default defineType({
     }),
     defineField({
       name: 'date',
-      title: 'Date',
+      title: '(Date)',
       type: 'string',
     }),
     defineField({

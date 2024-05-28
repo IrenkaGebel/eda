@@ -7,9 +7,9 @@ import { usePathname, useSearchParams } from 'next/navigation'
 
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import ImageBox from '@/components/shared/ImageBox'
+import { projectBySlugQuery } from '@/sanity/lib/queries'
 import { resolveHref } from '@/sanity/lib/utils'
 import type { HomePagePayload } from '@/types'
-import { projectBySlugQuery } from '@/sanity/lib/queries'
 
 export interface HomePageProps {
   data: HomePagePayload | null
@@ -49,7 +49,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                     isProject &&
                     isItIszSzi) ||
                   (filter === 'sketches' && isSketches),
-                'w-44':
+                'w-52':
                   (filter === 'project' && by === null && !isProject) ||
                   (filter === 'project' &&
                     by === 'isz-szi-studio' &&
