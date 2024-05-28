@@ -14,7 +14,7 @@ export function About({ data }: AboutPageProps) {
 
   return (
     <>
-      <div className=" flex flex-col gap-12 lg:gap-36">
+      <div className="flex flex-col gap-12 lg:gap-36">
         <article
           id="Eda"
           className="pl-4 pr-4 mb-16 lg:mb-0 lg:flex lg:flex-row  lg:gap-x-14 lg:justify-center lg:pt-32  "

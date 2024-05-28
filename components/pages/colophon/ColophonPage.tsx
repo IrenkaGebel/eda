@@ -13,7 +13,7 @@ export function Colophon({ data }: ColophonPageProps) {
 
   return (
     <>
-      <div className="text-coral-sweets p-4 h-dvh text-right flex flex-col justify-evenly">
+      <div className="text-coral-sweets p-2 h-dvh text-right flex flex-col justify-evenly text-base font-light">
         <div className=" ">{info && <CustomPortableText value={info} />}</div>
         <div>
           <p>{revision}</p>

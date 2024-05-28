@@ -7,7 +7,6 @@ import localFont from 'next/font/local'
 import { draftMode } from 'next/headers'
 import { Suspense } from 'react'
 
-import Filterbar from '@/components/global/Navbar/Filterbar'
 import Navbar from '@/components/global/Navbar/Navbar'
 import { urlForOpenGraphImage } from '@/sanity/lib/utils'
 import { loadHomePage, loadSettings } from '@/sanity/loader/loadQuery'
@@ -53,7 +52,7 @@ export default async function IndexRoute({
       <div className="">
         <Suspense>
           <Navbar />
-          <Filterbar />
+         
           <main>{children}</main>
         </Suspense>
       </div>

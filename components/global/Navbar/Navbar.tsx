@@ -4,25 +4,25 @@ import Link from 'next/link'
 export default function Navbar() {
   return (
     <>
-      <div className="z-50 flex flex-row justify-between bg-open-sky md:bg-transparent text-volcano-dust relative sticky top-0 font-medium text-sm ">
+      <div className="z-50 flex flex-row justify-between bg-butter-bun md:bg-transparent text-volcano-dust relative sticky top-0 font-medium text- ">
         <div className="italic pl-4 pt-2 lg:w-20 ">
           <Link className="" href="/">
             <h1>home (of) eda</h1>
           </Link>
         </div>
-        <div className="flex p-2 gap-0.5 sm:gap-6 md:flex md:flex-col md:gap-1 md:pr-4 md:text-right">
+        <div className="flex p-2 gap-0.5 sm:gap-6 md:flex md:flex-col md:gap-0.5 md:pr-4 md:text-right">
           <nav>
-            <Link className="p-2" href="/about">
+            <Link className="p-1" href="/about">
               about
             </Link>
           </nav>
           <nav>
-            <Link className="p-2" href="/collaborators">
+            <Link className="p-1" href="/collaborators">
               for collaborators
             </Link>
           </nav>
           <nav>
-            <Link className="p-2" href="/colophon">
+            <Link className="p-1" href="/colophon">
               colophon
             </Link>
           </nav>
