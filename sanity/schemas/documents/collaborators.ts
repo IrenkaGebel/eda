@@ -22,7 +22,7 @@ export default defineType({
               {
                 name: 'link',
                 type: 'object',
-                title: 'Link',
+                title: 'External link',
                 fields: [
                   {
                     name: 'href',
