@@ -114,6 +114,8 @@ export default defineType({
       type: 'array',
       of: [
         defineArrayMember({
+          styles: [],
+          type: 'block',
           marks: {
             annotations: [
               {
@@ -144,8 +146,6 @@ export default defineType({
               },
             ],
           },
-          styles: [],
-          type: 'block',
         }),
       ],
     }),
