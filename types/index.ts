@@ -72,7 +72,7 @@ export interface MenuItem {
 
 export interface showcaseProjects {
   _type: string
-  coverImage?: Image
+  coverImage?: ImageInGallery
   slug?: string
   title?: string
   forWhomAndWhere: PortableTextBlock[]
@@ -111,7 +111,7 @@ export interface ProjectPayload {
   linkImage: Image
   projectInfo?: PortableTextBlock[]
   additionalInfo: PortableTextBlock[]
-  coverImage?: Image
+  coverImage?: ImageInGallery
   gallery: { images: [ImageInGallery] }
 }
 
@@ -133,7 +133,7 @@ export interface SketchesPayload {
   }
   linkImage: Image
   sketchesInfo?: PortableTextBlock[]
-  coverImage?: Image
+  coverImage?: ImageInGallery
   gallery: { images: [ImageInGallery] }
 }
 

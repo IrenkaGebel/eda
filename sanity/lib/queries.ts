@@ -14,7 +14,14 @@ export const homePageQuery = groq`
       projectInfo,
       additionalInfo,
       isItIszSzi,
-      coverImage,
+      coverImage {
+      _key,
+      _type,
+      asset->{
+        "aspectRatio": metadata.dimensions.aspectRatio,
+        url,
+      }
+    },
     },
     title,
   }
@@ -44,8 +51,24 @@ export const projectBySlugQuery = groq`
     additionalInfo,
     date,
     forWhomAndWhere,
-    coverImage,
-    gallery,
+    coverImage {
+      _key,
+      _type,
+      asset->{
+        "aspectRatio": metadata.dimensions.aspectRatio,
+        url,
+      }
+    },
+    gallery{
+      images[]{
+        _key,
+        _type,
+        asset->{
+          "aspectRatio": metadata.dimensions.aspectRatio,
+          url,
+        }
+      }
+    },
     
   }
 `
@@ -59,8 +82,24 @@ export const sketchesBySlugQuery = groq`*[_type == "sketches" && slug.current ==
     },
     linkImage,
     sketchesInfo,
-    coverImage,
-    gallery,
+    coverImage {
+      _key,
+      _type,
+      asset->{
+        "aspectRatio": metadata.dimensions.aspectRatio,
+        url,
+      }
+    },
+    gallery{
+      images[]{
+        _key,
+        _type,
+        asset->{
+          "aspectRatio": metadata.dimensions.aspectRatio,
+          url,
+        }
+      }
+    },
     }`
 
 export const ABOUT_QUERY = groq`*[_type == "about"][0]{

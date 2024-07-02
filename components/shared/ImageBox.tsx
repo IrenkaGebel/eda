@@ -21,7 +21,8 @@ export default function ImageBox({
   classesWrapper,
   ...props
 }: ImageBoxProps) {
-  const imageUrl = image && urlForImage(image)?.url()
+  // const imageUrl = image && urlForImage(image)?.url()
+  const imageUrl = image?.asset && image.asset.url
 
   return (
     <div className={`${classesWrapper}`} data-sanity={props['data-sanity']}>

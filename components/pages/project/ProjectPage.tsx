@@ -26,6 +26,8 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
     gallery,
   } = data ?? {}
 
+  console.log('gallery', gallery)
+
   return (
     <div className="text-3xl font-light ">
       <div className="flex flex-wrap justify-items-center pt-16 pr-8 pl-8 pb-4 lg:pl-16 lg:pr-16">
@@ -72,14 +74,14 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
           image={coverImage}
           alt=""
           classesWrapper=" "
-          width={560}
-          size="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 40vw"
+          width={coverImage?.asset.aspectRatio > 1 ? 900 : 560}
+          size="(max-width: 768px) 100vw, (max-width: 1000px) 80vw, 40vw"
         />
       </div>
       {/* gallery */}
       <div className="flex flex-col items-center gap-16 pb-16 pr-4 pl-4">
         {gallery?.images &&
-          gallery.images.map((img) => {
+          gallery.images.map((img, index) => {
             return (
               <div key={img._key}>
                 <ImageBox
@@ -87,8 +89,8 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
                   image={img}
                   alt=""
                   classesWrapper=""
-                  width={560}
-                  size="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 40vw"
+                  width={img.asset.aspectRatio > 1 ? 900 : 560}
+                  size="(max-width: 768px) 100vw, (max-width: 1000px) 80vw, 40vw"
                 />
               </div>
             )

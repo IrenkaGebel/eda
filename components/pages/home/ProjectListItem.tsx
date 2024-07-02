@@ -35,7 +35,7 @@ export function ProjectListItem(props: ProjectProps) {
           <ImageBox
             image={project.coverImage}
             alt={`Cover image from ${project.title}`}
-            size="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 40vw"
+            size="(max-width: 768px) 100vw, (max-width: 1000px) 80vw, 40vw"
           />
         </div>
       </div>

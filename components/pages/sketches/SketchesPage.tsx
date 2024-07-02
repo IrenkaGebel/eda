@@ -61,8 +61,8 @@ export function SketchesPage({ data, encodeDataAttribute }: SketchesPageProps) {
           image={coverImage}
           alt=""
           classesWrapper=" "
-          width={560}
-          size="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 40vw"
+          width={coverImage?.asset.aspectRatio > 1 ? 900 : 560}
+          size="(max-width: 768px) 100vw, (max-width: 1000px) 80vw, 40vw"
         />
       </div>
       {/* gallery */}
@@ -76,8 +76,8 @@ export function SketchesPage({ data, encodeDataAttribute }: SketchesPageProps) {
                   image={img}
                   alt=""
                   classesWrapper=""
-                  width={560}
-                  size="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 40vw"
+                  width={img.asset.aspectRatio > 1 ? 900 : 560}
+                  size="(max-width: 768px) 100vw, (max-width: 1000px) 80vw, 40vw"
                 />
               </div>
             )
