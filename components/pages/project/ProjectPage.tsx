@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import ImageBox from '@/components/shared/ImageBox'
 import type { ProjectPayload } from '@/types'
+import project from '@/sanity/schemas/documents/project'
 
 export interface ProjectPageProps {
   data: ProjectPayload | null
@@ -37,14 +38,15 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
           <CustomPortableText paragraphClasses="" value={projectInfo} />
         )}
       </div>
-      <div className="p-8 lg:pt-0 lg:pl-16 lg:pr-16 pb-32">
-        {additionalInfo && (
+
+      {additionalInfo && (
+        <div className="p-8 lg:pt-0 lg:pl-16 lg:pr-16 pb-32">
           <CustomPortableText paragraphClasses="" value={additionalInfo} />
-        )}
-      </div>
+        </div>
+      )}
 
       {/* reference to sketches as 'view process' and 'link image' */}
-      <div className="rotate-90 w-32 w-screen flex flex-col items-center justify-center text-sm gap-1">
+      <div className="rotate-90 w-32 pl-32 w-screen flex flex-col items-center justify-center text-sm gap-1">
         {referenceToSketches?.slug.current && (
           <Link href={'/sketches/' + referenceToSketches.slug.current}>
             view process{' '}
