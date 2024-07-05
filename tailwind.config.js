@@ -16,7 +16,7 @@ module.exports = {
         'open-sky': '#AADCFF',
       },
       dropShadow: {
-        tea: '2px 4px 6px rgba(255, 192, 203, 0.75)',
+        tea: '20px 24px 106px rgba(255, 192, 203, 0.75)',
       },
       // Overriding fontFamily to use @next/font loaded families
       fontFamily: {
