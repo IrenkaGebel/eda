@@ -15,6 +15,9 @@ module.exports = {
         'coral-sweets': '#F96F88',
         'open-sky': '#AADCFF',
       },
+      dropShadow: {
+        tea: '2px 4px 6px rgba(255, 192, 203, 0.75)',
+      },
       // Overriding fontFamily to use @next/font loaded families
       fontFamily: {
         mono: 'var(--font-mono)',

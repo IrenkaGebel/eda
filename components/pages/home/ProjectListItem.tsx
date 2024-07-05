@@ -31,7 +31,10 @@ export function ProjectListItem(props: ProjectProps) {
       </div>
       {/* coverImage */}
       <div className="flex justify-center pb-16 pt-8 ">
-        <div className="w-72">
+        <div
+          className="w-72 drop-shadow-tea"
+          // style={{ filter: 'drop-shadow(2px 4px 6px pink)' }}
+        >
           <ImageBox
             image={project.coverImage}
             alt={`Cover image from ${project.title}`}
