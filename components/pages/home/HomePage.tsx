@@ -42,7 +42,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
                       key,
                       'slug',
                     ])}
-                    className="flex flex-col lg:hover:ring-8 ring-butter-bun mt-4 mb-4 lg:m-6 p-2 rounded width-screen height-screen"
+                    className="flex flex-col ring-butter-bun mt-4 mb-4 p-2 rounded width-screen height-screen"
                   >
                     <ProjectListItem project={project} />
                   </Link>

@@ -11,8 +11,8 @@ export function ProjectListItem(props: ProjectProps) {
   const { project } = props
 
   return (
-    <div className="text-3xl font-light">
-      <div className="flex flex-wrap pr-8 pl-8 gap-4 lg:justify-end lg:text-end lg:ml-96 ">
+    <div className="text-3xl font-light lg:justify-center">
+      <div className="flex flex-wrap pr-8 pl-8 lg:pr-32 lg:pl-32 gap-4  ">
         <h1 className="italic">{project.title}</h1>
         <div className="text-sm font-normal ">{project.date} </div>
         {/* for whom and where */}
@@ -30,7 +30,7 @@ export function ProjectListItem(props: ProjectProps) {
         </div>
       </div>
       {/* coverImage */}
-      <div className="flex justify-center pb-16 pt-8 lg:justify-start lg:pl-8">
+      <div className="flex justify-center pb-16 pt-8 ">
         <div className="w-72">
           <ImageBox
             image={project.coverImage}
