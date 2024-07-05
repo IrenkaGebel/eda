@@ -5,7 +5,7 @@ import CollaboratorsPage from '@/components/pages/Collaborators/CollaboratorsPag
 import { loadCollaborators } from '@/sanity/loader/loadQuery'
 
 export const metadata: Metadata = {
-  title: 'collaborators',
+  title: 'pop-up',
 }
 
 export default async function CollaboratorsRoute() {

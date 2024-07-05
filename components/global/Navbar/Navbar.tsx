@@ -17,13 +17,13 @@ export default function Navbar() {
             </Link>
           </nav>
           <nav>
-            <Link className="p-1" href="/collaborators">
-              for collaborators
+            <Link className="p-1" href="/pop-up">
+              pop-up
             </Link>
           </nav>
           <nav>
-            <Link className="p-1" href="/colophon">
-              colophon
+            <Link className="p-1" href="/credits">
+              credits
             </Link>
           </nav>
         </div>

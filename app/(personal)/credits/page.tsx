@@ -5,7 +5,7 @@ import ColophonPage from '@/components/pages/colophon/ColophonPage'
 import { loadColophon } from '@/sanity/loader/loadQuery'
 
 export const metadata: Metadata = {
-  title: 'colophon',
+  title: 'credits',
 }
 
 export default async function ColophonRoute() {
